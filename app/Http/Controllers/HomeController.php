@@ -19,4 +19,10 @@ class HomeController extends Controller
             return view('dashboard');
         }
     }
+
+    //home page
+    public function profile(){
+        return view('profile');
+    }
+    
 }

@@ -32,7 +32,7 @@
 								<li><a href="add-staff.html"> Add Staff </a></li>
 							</ul>
 						</li>
-						<li> <a href="pricing.html"><i class="far fa-money-bill-alt"></i> <span>Pricing</span></a> </li>
+						<!-- <li> <a href="pricing.html"><i class="far fa-money-bill-alt"></i> <span>Pricing</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fas fa-share-alt"></i> <span> Apps </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="chat.html"><i class="fas fa-comments"></i><span> Chat </span></a></li>
@@ -51,7 +51,7 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="employees.html">Employees List </a></li>
@@ -60,7 +60,7 @@
 								<li><a href="attendance.html">Attendance </a></li>
 							</ul>
 						</li>
-						<li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
+						<!-- <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="invoices.html">Invoices </a></li>
 								<li><a href="payments.html">Payments </a></li>
@@ -83,8 +83,8 @@
 								<li><a href="add-blog.html">Add Blog </a></li>
 								<li><a href="edit-blog.html">Edit Blog </a></li>
 							</ul>
-						</li>
-						<li> <a href="assets.html"><i class="fas fa-cube"></i> <span>Assests</span></a> </li>
+						</li> -->
+						<!-- <li> <a href="assets.html"><i class="fas fa-cube"></i> <span>Assests</span></a> </li> -->
 						<li> <a href="activities.html"><i class="far fa-bell"></i> <span>Activities</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
@@ -92,7 +92,7 @@
 								<li><a href="invoice-reports.html">Invoice Report </a></li>
 							</ul>
 						</li>
-						<li> <a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a> </li>
+						<!-- <li> <a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a> </li>
 						<li class="list-divider"></li>
 						<li class="menu-title mt-3"> <span>UI ELEMENTS</span> </li>
 						<li class="submenu"> <a href="#"><i class="fas fa-laptop"></i> <span> Components </span> <span class="menu-arrow"></span></a>
@@ -137,7 +137,7 @@
 								<li><a href="">Level 1 </a></li>
 								<li><a href="">Level 2 </a></li>
 							</ul>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>

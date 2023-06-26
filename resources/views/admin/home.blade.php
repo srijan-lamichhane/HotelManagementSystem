@@ -12,6 +12,7 @@
 <body>
 	<div class="main-wrapper">
     @include('admin.header')
+
     @include('admin.sidebar')
     @include('admin.body')
 

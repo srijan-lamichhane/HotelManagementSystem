@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::middleware([
 });
 
 
-route::get('/redirect', [HomeController::class,'redirect']);
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+   
