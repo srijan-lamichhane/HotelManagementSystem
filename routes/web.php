@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\App;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/',[HomeController::class,'index']);
+
 
 // this will directly open login page in our website
 Route::get('/', function () {
@@ -30,6 +34,5 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
-   
+Route::get('/redirect',[HomeController::class,'redirect']);
+Route::get('/view_profile',[AdminController::class,'view_profile']);
