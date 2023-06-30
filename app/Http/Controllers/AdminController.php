@@ -10,7 +10,16 @@ use App\Models\profile;
 class AdminController extends Controller
 {
 
-    public function view_profile(){
+    public function view_profile()
+    {
         return view('admin.profile');
     }
+
+    public function edit_profile()
+    {
+        return view('admin.editprofile');
+    }
+
+
+    
 }

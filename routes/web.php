@@ -36,3 +36,5 @@ Route::middleware([
 
 Route::get('/redirect',[HomeController::class,'redirect']);
 Route::get('/view_profile',[AdminController::class,'view_profile']);
+Route::get('/edit_profile',[AdminController::class,'edit_profile']);
+
