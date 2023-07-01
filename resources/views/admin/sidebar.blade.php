@@ -6,8 +6,8 @@
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html"> All Booking </a></li>
-								<li><a href="edit-booking.html"> Edit Booking </a></li>
+								<li><a href="{{url ('form/allbooking')}}"> All Booking </a></li>
+								<li><a href="{{url ('form/editbooking')}}"> Edit Booking </a></li>
 								<li><a href="add-booking.html"> Add Booking </a></li>
 							</ul>
 						</li>

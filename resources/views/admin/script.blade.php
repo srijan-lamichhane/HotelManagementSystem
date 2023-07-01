@@ -7,3 +7,14 @@
 	<script src="{{ URL::to('admin/assets/plugins/morris/morris.min.js')}} "></script>
 	<script src="{{ URL::to('admin/assets/js/chart.morris.js')}} "></script>
 	<script src="{{ URL::to('admin/assets/js/script.js')}} "></script>
+
+	<script src="{{ URL::to('admin/assets/js/moment.min.js')}} "></script>
+    <script src="{{ URL::to('admin/assets/js/bootstrap-datetimepicker.min.js')}} "></script>
+	<script>
+        $(function() {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+
+            });
+        });
+    </script>

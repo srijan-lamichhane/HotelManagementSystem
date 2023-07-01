@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -35,6 +36,12 @@ Route::middleware([
 });
 
 Route::get('/redirect',[HomeController::class,'redirect']);
+
+
 Route::get('/view_profile',[AdminController::class,'view_profile']);
 Route::get('/edit_profile',[AdminController::class,'edit_profile']);
+
+
+Route::get('form/allbooking',[BookingController::class,'allbooking']);
+Route::get('form/editbooking',[BookingController::class,'editbooking']);
 
