@@ -20,13 +20,8 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="phone" value="{{ __('Phone') }}" />
-                <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="address" value="{{ __('address') }}" />
-                <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autocomplete="username" />
+                <x-label for="phone" value="{{ __('Phones') }}" />
+                <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autocomplete="username" />
             </div>
 
             <div class="mt-4">
