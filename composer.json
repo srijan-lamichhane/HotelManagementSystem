@@ -26,9 +26,11 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "App\\Greeting\\": "app/Greeting/"
         }
     },
+    
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
@@ -65,4 +67,10 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
+
+
+    
+        
+    
 }
