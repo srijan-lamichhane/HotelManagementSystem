@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('floor');
             $table->decimal('price', 8, 2);
             $table->string('room_type');
-            $table->timestamps();  //
+            $table->timestamps();  
     });
 }
 
