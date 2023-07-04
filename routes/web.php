@@ -44,4 +44,5 @@ Route::get('/edit_profile',[AdminController::class,'edit_profile']);
 
 Route::get('form/allbooking',[BookingController::class,'allbooking']);
 Route::get('form/editbooking',[BookingController::class,'editbooking']);
+Route::get('form/addbooking',[BookingController::class,'addbooking']);
 
