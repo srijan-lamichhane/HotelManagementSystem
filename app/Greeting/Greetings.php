@@ -10,11 +10,11 @@ class Greetings
         $currentHour = (int)date('H');
 
         if ($currentHour >= 0 && $currentHour < 12) {
-            $greeting = 'Good morning';
+            $greeting = 'Good Morning';
         } elseif ($currentHour >= 12 && $currentHour < 17) {
-            $greeting = 'Good afternoon';
+            $greeting = 'Good Afternoon';
         } else {
-            $greeting = 'Good evening';
+            $greeting = 'Good Evening';
         }
 
         return $greeting . ', ' . $name;
