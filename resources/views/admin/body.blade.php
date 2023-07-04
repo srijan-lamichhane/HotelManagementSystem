@@ -3,8 +3,7 @@
 				<div class="page-header">
 					<div class="row">
 						<div class="col-sm-12 mt-5">
-						<h3 class="page-title mt-3">{{ \App\Greeting\Greetings::getNepaliGreeting(Auth::user()->name) }}!</h3>
-
+						<h3 class="page-title mt-3">{{ \App\Greeting\Greetings::getNepaliGreeting(Auth::user()->name) }}! </h3>
 								<li class="breadcrumb-item active">Dashboard</li>
 							</ul>
 						</div>
