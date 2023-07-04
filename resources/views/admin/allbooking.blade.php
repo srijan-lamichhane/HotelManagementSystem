@@ -35,7 +35,7 @@
                                                 <th>Booking ID</th>
                                                 <th>Name</th>
                                                 <th>Room Type</th>
-                                                <th>Total Numbers</th>
+                                                <th>Room Number</th>
                                                 <th>Date</th>
                                                 <th>Time</th>
                                                 <th>Arrival Date</th>
@@ -51,7 +51,7 @@
                                                 <td>BKG-0001</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-03.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-03.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">Tommy Bernal <span>#0001</span></a>
                                                     </h2>
                                                 </td>
@@ -76,7 +76,7 @@
                                                 <td>BKG-0002</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-04.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-04.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">Richard Brobst <span>#0002</span></a>
                                                     </h2>
                                                 </td>
@@ -101,7 +101,7 @@
                                                 <td>BKG-0003</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-05.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-05.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">Ellen Thill <span>#0003</span></a>
                                                     </h2>
                                                 </td>
@@ -126,7 +126,7 @@
                                                 <td>BKG-0004</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-06.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-06.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">Corina Kelsey <span>#0004</span></a>
                                                     </h2>
                                                 </td>
@@ -151,7 +151,7 @@
                                                 <td>BKG-0005</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-07.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-07.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">Carolyn Lane <span>#0005</span></a>
                                                     </h2>
                                                 </td>
@@ -176,7 +176,7 @@
                                                 <td>BKG-0006</td>
                                                 <td>
                                                     <h2 class="table-avatar">
-                                                        <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-08.jpg')}}" alt="User Image"></a>
+                                                        <!-- <a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="{{ URL::to('admin/assets/img/profiles/avatar-08.jpg')}}" alt="User Image"></a> -->
                                                         <a href="profile.html">David Alvarez <span>#0006</span></a>
                                                     </h2>
                                                 </td>

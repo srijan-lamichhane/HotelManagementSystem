@@ -15,4 +15,8 @@ class BookingController extends Controller
     {
         return view('admin.editbooking');
     }
+    public function addbooking()
+    {
+        return view('admin.addbooking');
+    }
 }

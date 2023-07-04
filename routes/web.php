@@ -45,6 +45,10 @@ Route::get('/edit_profile',[AdminController::class,'edit_profile']);
 
 Route::get('form/allbooking',[BookingController::class,'allbooking']);
 Route::get('form/editbooking',[BookingController::class,'editbooking']);
+<<<<<<< HEAD
 Route::get('/all-rooms.html',[RoomController::class,'allrooms']);
 Route::get('/add-rooms.html',[RoomController::class,'addrooms1']);
 Route::post('/add-rooms.html',[RoomController::class,'addrooms'] );
+=======
+Route::get('form/addbooking',[BookingController::class,'addbooking']);
+>>>>>>> 5a286eb296abd3a72702ec52f22371332cc04bbb
