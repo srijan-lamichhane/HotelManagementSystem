@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -44,6 +45,9 @@ Route::get('/edit_profile',[AdminController::class,'edit_profile']);
 
 Route::get('form/allbooking',[BookingController::class,'allbooking']);
 Route::get('form/editbooking',[BookingController::class,'editbooking']);
+Route::get('/all-rooms.html',[RoomController::class,'allrooms']);
+Route::get('/add-rooms.html',[RoomController::class,'addrooms1']);
+Route::post('/add-rooms.html',[RoomController::class,'addrooms'] );
 Route::get('form/addbooking',[BookingController::class,'addbooking']);
 
 Route::post('form/savebooking',[BookingController::class,'saveRecord']);

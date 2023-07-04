@@ -1,16 +1,13 @@
 <div class="page-wrapper">
-	
-	<div class="content container-fluid">
-		<div class="page-header">
-			<div class="row">
-				<div class="col-sm-12 mt-5">
-					<h3 class="page-title mt-3">Good Morning {{Auth::user()->name}}!</h3>
-					<ul class="breadcrumb">
-						<li class="breadcrumb-item active">Dashboard</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12 mt-5">
+						<h3 class="page-title mt-3">{{ \App\Greeting\Greetings::getNepaliGreeting(Auth::user()->name) }}! </h3>
+								<li class="breadcrumb-item active">Dashboard</li>
+							</ul>
+						</div>
+					</div>
 		<div class="row">
 			<div class="col-xl-3 col-sm-6 col-12">
 				<div class="card board1 fill">
