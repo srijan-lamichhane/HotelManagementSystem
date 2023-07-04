@@ -22,20 +22,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form>
+
+                <form action="{{ url('form/savebooking')}}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-12">
+
                             <div class="row formtype">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Booking ID</label>
-                                        <input class="form-control" type="text" value="BKG-0001">
-                                    </div>
-                                </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <select class="form-control" id="sel1" name="sellist1">
+                                        <select class="form-control @error('name') is-invalid @enderror" id="sel1" name="name" value="{{ old('name') }}">
                                             <option>Select</option>
                                             <option>Jennifer Robinson</option>
                                             <option>Terry Baker</option>
@@ -45,7 +43,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <select class="form-control" id="sel2" name="sellist1">
+                                        <select class="form-control  @error('name') is-invalid @enderror" id="sel2" name="sellist1">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -59,7 +57,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Total Members</label>
-                                        <select class="form-control" id="sel3" name="sellist1">
+                                        <select class="form-control  @error('name') is-invalid @enderror" id="sel3" name="sellist1">
                                             <option>Select</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -81,7 +79,7 @@
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
+                                            <input type="text" class="form-control  @error('time') is-invalid @enderror" id="datetimepicker3" name="time">
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +87,7 @@
                                     <div class="form-group">
                                         <label>Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control  @error('name') is-invalid @enderror datetimepicker">
                                         </div>
                                     </div>
                                 </div>
@@ -97,20 +95,20 @@
                                     <div class="form-group">
                                         <label>Depature Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control  @error('name') is-invalid @enderror datetimepicker">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="text" class="form-control" id="usr">
+                                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="usr">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="usr1">
+                                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="usr1">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -129,12 +127,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+
+                        </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary buttonedit">Save</button>
+                    <button type="submit" class="btn btn-primary buttonedit1">Create Booking</button>
+                </form>
             </div>
         </div>
+
 
     </div>
 
