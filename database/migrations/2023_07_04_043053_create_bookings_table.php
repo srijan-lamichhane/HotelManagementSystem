@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('departure_date')->nullable();
             $table->string('email_id')->nullable();
             $table->string('ph_number')->nullable();
-            $table->string('status')->nullable();
+            $table->string('message')->nullable();
             $table->timestamps();
         });
     }

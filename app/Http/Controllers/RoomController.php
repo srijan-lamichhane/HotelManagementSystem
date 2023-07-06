@@ -13,7 +13,7 @@ class RoomController extends Controller
     }
     public function addrooms1()
     {
-        return view('admin.addrooms');
+        return view('admin.room.addrooms');
     }
     public function addrooms(Request $request)
     {
@@ -29,7 +29,7 @@ class RoomController extends Controller
         $addrooms->save();
 
         // Redirect to a success page or perform any other desired action
-        return redirect('/add-rooms.html');
+        return redirect('/add_rooms');
     }
     
 }

@@ -45,9 +45,8 @@ Route::get('/edit_profile',[AdminController::class,'edit_profile']);
 
 Route::get('form/allbooking',[BookingController::class,'allbooking']);
 Route::get('form/editbooking',[BookingController::class,'editbooking']);
-Route::get('/all-rooms.html',[RoomController::class,'allrooms']);
-Route::get('/add-rooms.html',[RoomController::class,'addrooms1']);
-Route::post('/add-rooms.html',[RoomController::class,'addrooms'] );
 Route::get('form/addbooking',[BookingController::class,'addbooking']);
-
 Route::post('form/savebooking',[BookingController::class,'saveRecord']);
+
+
+Route::get('/all_rooms',[RoomController::class,'allrooms']);

@@ -113,7 +113,7 @@
                                         <input type="text" class="form-control" id="usr1">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <!-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label>File Upload</label>
                                         <div class="custom-file mb-3">
@@ -121,7 +121,7 @@
                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Message</label>

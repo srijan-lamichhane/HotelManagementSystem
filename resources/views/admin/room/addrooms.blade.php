@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <!-- Laravel HTML form for room information -->
-                <form method="POST" action="/add-rooms.html" class="my-4">
+                <form method="POST" action="/add_rooms" class="my-4">
                     @csrf
                     
 
