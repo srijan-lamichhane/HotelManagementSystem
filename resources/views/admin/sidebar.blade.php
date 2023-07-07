@@ -13,25 +13,25 @@
 						</li>
 						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-customer.html"> All customers </a></li>
-								<li><a href="edit-customer.html"> Edit Customer </a></li>
-								<li><a href="add-customer.html"> Add Customer </a></li>
+								<li><a href="{{url ('form/allbooking')}}"> All customers </a></li>
+								<li><a href="{{url ('form/allbooking')}}"> Edit Customer </a></li>
+								<li><a href="{{url ('form/allbooking')}}"> Add Customer </a></li>
 							</ul>
 						</li>
 						<li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-rooms.html">All Rooms </a></li>
-								<li><a href="edit-rooms.html"> Edit Rooms </a></li>
-								<li><a href="add-rooms.html"> Add Rooms </a></li>
+								<li><a href="{{url ('/all_rooms')}}">All Rooms </a></li>
+								<li><a href="{{url ('/add_rooms')}}"> Edit Rooms </a></li>
+								<li><a href="{{url ('/add_rooms1')}}"> Add Rooms </a></li>
 							</ul>
-						</li>
-						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Staff </span> <span class="menu-arrow"></span></a>
+						</li>	
+						<!-- <li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Staff </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="all-staff.html">All Staff </a></li>
-								<li><a href="edit-staff.html"> Edit Staff </a></li>
-								<li><a href="add-staff.html"> Add Staff </a></li>
+								<li><a href="/add_rooms"> Edit Staff </a></li>
+								<li><a href="/add_rooms1"> Add Staff </a></li>
 							</ul>
-						</li>
+						</li> -->
 						<!-- <li> <a href="pricing.html"><i class="far fa-money-bill-alt"></i> <span>Pricing</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fas fa-share-alt"></i> <span> Apps </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">

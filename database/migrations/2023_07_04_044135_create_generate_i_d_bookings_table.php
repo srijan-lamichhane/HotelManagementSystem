@@ -20,6 +20,9 @@ return new class extends Migration
             END
         '); 
     }
+    /**
+     * LPAD() is used to left-pad a string with a specific character to a certain length. In this case, it left-pads the LAST_INSERT_ID() value with zeros to a total length of 8 characters.
+     */
 
     /**
      * Reverse the migrations.

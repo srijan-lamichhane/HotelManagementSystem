@@ -33,19 +33,18 @@
                                         <thead>
                                             <tr>
                                                 <th>Room NO</th>
-        
+
                                                 <th>Room Type</th>
                                                 <th>Floor</th>
-                                                 <th>price</th>
+                                                <th>price</th>
                                                 <th>Status</th>
-                                                <
-                                                <th class="text-right">Actions</th>
+                                                < <th class="text-right">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>101</td>
-                                            
+
                                                 <td>double</td>
                                                 <td>1st</td>
                                                 <td>2500/per day </td>
@@ -60,7 +59,7 @@
                                             </tr>
                                             <tr>
                                                 <td>102</td>
-                                              
+
                                                 <td>Single</td>
                                                 <td>1st</td>
                                                 <td>1500/per day </td>
@@ -75,7 +74,7 @@
                                             </tr>
                                             <tr>
                                                 <td>103</td>
-                                              
+
                                                 <td>Double</td>
                                                 <td>1st</td>
                                                 <td>2500/per day </td>
@@ -90,7 +89,7 @@
                                             </tr>
                                             <tr>
                                                 <td>201</td>
-                                                
+
                                                 <td>Single</td>
                                                 <td>2nd</td>
                                                 <td>1500/per day </td>
@@ -105,13 +104,13 @@
                                             </tr>
                                             <tr>
                                                 <td>202</td>
-                                               
+
                                                 <td>Double</td>
                                                 <td>2nd</td>
                                                 <td>1500/per day </td>
                                                 <td>
-                                                
-                                                <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
+
+                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
                                                 </td>
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
@@ -121,7 +120,7 @@
                                             </tr>
                                             <tr>
                                                 <td>203</td>
-                                              
+
                                                 <td>Single</td>
                                                 <td>2nd</td>
                                                 <td>1500/per day </td>
