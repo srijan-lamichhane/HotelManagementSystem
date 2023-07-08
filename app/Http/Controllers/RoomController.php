@@ -9,13 +9,19 @@ class RoomController extends Controller
     //view all booking
     public function allrooms()
     {
-        return view('admin.allrooms');
+        return view('admin.room.allrooms');
     }
-    public function addrooms1()
+
+    public function editrooms()
+    {
+        return view('admin.room.editrooms');
+    }
+    public function addrooms()
     {
         return view('admin.room.addrooms');
     }
-    public function addrooms(Request $request)
+
+    public function saveRoom(Request $request)
     {
         
         // Create a new room instance and set the values from the form

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -47,6 +48,13 @@ Route::get('form/allbooking',[BookingController::class,'allbooking']);
 Route::get('form/editbooking',[BookingController::class,'editbooking']);
 Route::get('form/addbooking',[BookingController::class,'addbooking']);
 Route::post('form/savebooking',[BookingController::class,'saveRecord']);
+Route::get('/delete_record/{id}',[BookingController::class,'deleterecord']);
 
 
 Route::get('/all_rooms',[RoomController::class,'allrooms']);
+Route::get('/edit_rooms',[RoomController::class,'editrooms']);
+Route::get('/add_rooms',[RoomController::class,'addrooms']);
+Route::get('/save_rooms',[RoomController::class,'saveRoom']);
+
+
+Route::get('employee/list',[EmployeeController::class,'listemployees']);

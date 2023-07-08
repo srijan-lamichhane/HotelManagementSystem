@@ -3,30 +3,7 @@
 
 <head>
     @include('admin.css')
-    <style>
-        .page-header {
-            margin-bottom: 20px;
-            /* Add some bottom margin to create space for the pop-up */
-        }
 
-        .page-title {
-            margin-top: 40px;
-            /* Adjust the top margin to displace the title down */
-        }
-
-        #popup-container {
-            margin-top: 10px;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            z-index: 9999;
-        }
-
-
-        header {
-            z-index: 999;
-        }
-    </style>
 </head>
 
 <body>
@@ -42,20 +19,22 @@
 
 
             <div class="content container-fluid">
+
                 <div class="page-header">
-                    <div class="row align-items-center">
-                        <div class="col">
-
-                            <div id="popup-container">
-                                @if(session()->has('message'))
-                                <div class="alert alert-success">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                    {{session()->get('message')}}
+                    <div id="popup-container">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="mt-5">
+                                    @if(session()->has('message'))
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        {{session()->get('message')}}
+                                    </div>
+                                    @endif
                                 </div>
-                                @endif
+                                <h4 class="card-title float-left mt-2">Add Booking</h4>
+                                
                             </div>
-
-                            <h3 class="page-title mt-5">Add Booking</h3>
                         </div>
                     </div>
                 </div>

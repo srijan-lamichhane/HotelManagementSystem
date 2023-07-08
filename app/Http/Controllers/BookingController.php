@@ -57,4 +57,11 @@ class BookingController extends Controller
         // Redirect to a success page or perform any other desired action
         return redirect()-> back()->with('message', 'New booking Added Sucessfully!');
     }
+
+    public function deleterecord($id)
+    {
+        $data = Booking::find($id);
+        $data->delete();
+        return redirect()->back()->with('message', 'Data deleted Sucessfully!');
+    }
 }

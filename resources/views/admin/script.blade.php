@@ -1,4 +1,6 @@
 <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 	<script src="{{ URL::to('admin/assets/js/jquery-3.5.1.min.js')}} "></script>
 	<script src="{{ URL::to('admin/assets/js/jquery-ui.min.js')}} "></script>
 	<script src="{{ URL::to('admin/assets/js/popper.min.js')}} "></script>

@@ -38,7 +38,7 @@
                                                 <th>Floor</th>
                                                 <th>price</th>
                                                 <th>Status</th>
-                                                < <th class="text-right">Actions</th>
+                                                <th class="text-right">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
