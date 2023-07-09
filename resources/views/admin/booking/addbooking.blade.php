@@ -85,9 +85,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Date</label>
+                                        <label> Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datetimepicker" name="date">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
                                         </div>
                                     </div>
                                 </div>
@@ -101,24 +101,24 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Arrival Date</label>
+                                        <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control  @error('') is-invalid @enderror datetimepicker" name="arrival_date">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Depature Date</label>
+                                        <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control  @error('departure_date') is-invalid @enderror datetimepicker" name="departure_date">
+                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="text" class="form-control  @error('email_id') is-invalid @enderror" id="usr" name="email_id">
+                                        <input type="email" class="form-control  @error('email_id') is-invalid @enderror" id="usr" name="email_id">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
