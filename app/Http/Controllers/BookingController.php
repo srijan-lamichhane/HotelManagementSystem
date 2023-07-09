@@ -24,7 +24,8 @@ class BookingController extends Controller
     }
     public function customers()
     {
-        return view('admin.customer.customer');
+        $data = Booking::all();
+        return view('admin.customer.customer', compact('data'));
     }
 
 
