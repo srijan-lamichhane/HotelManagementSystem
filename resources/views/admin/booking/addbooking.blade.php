@@ -142,7 +142,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="text" class="form-control @error('email_id') is-invalid @enderror" id="usr" name="email_id">
+                                        <input type="email" class="form-control @error('email_id') is-invalid @enderror" id="usr" name="email_id">
                                     </div>
                                 </div>
                                 <div class="col-md-4">

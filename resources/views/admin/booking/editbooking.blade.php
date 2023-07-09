@@ -104,7 +104,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="text" class="form-control" id="usr">
+                                        <input type="email" class="form-control" id="usr">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
