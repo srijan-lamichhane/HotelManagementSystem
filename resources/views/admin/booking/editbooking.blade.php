@@ -71,9 +71,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Date</label>
+                                        <label> Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
                                         </div>
                                     </div>
                                 </div>
@@ -87,17 +87,17 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Arrival Date</label>
+                                        <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Depature Date</label>
+                                        <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
+                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date">
                                         </div>
                                     </div>
                                 </div>
