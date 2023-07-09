@@ -1,0 +1,10 @@
+.ui-datepicker.ui-widget {
+    background-color: #009688;
+    color: white;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-calendar th,
+.ui-datepicker-calendar td.ui-datepicker-week-end {
+    background-color: transparent;
+}

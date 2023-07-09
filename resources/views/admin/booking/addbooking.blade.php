@@ -2,25 +2,42 @@
 <html lang="en">
 
 <head>
+
+
     @include('admin.css')
 
+<<<<<<< HEAD
+=======
+        .page-title {
+            margin-top: 40px;
+            /* Adjust the top margin to displace the title down */
+        }
+
+        #popup-container {
+            margin-top: 10px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 9999;
+        }
+
+        header {
+            z-index: 999;
+        }
+    </style>
+>>>>>>> 864dd04 (Calendar added!)
 </head>
 
 <body>
-
     <div class="main-wrapper">
         @include('admin.header')
-
         @include('admin.sidebar')
 
-
         <div class="page-wrapper">
-
-
-
             <div class="content container-fluid">
 
                 <div class="page-header">
+<<<<<<< HEAD
                     <div id="popup-container">
                         <div class="row align-items-center">
                             <div class="col">
@@ -31,35 +48,42 @@
                                         {{session()->get('message')}}
                                     </div>
                                     @endif
+=======
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <div id="popup-container">
+                                @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                    {{session()->get('message')}}
+>>>>>>> 864dd04 (Calendar added!)
                                 </div>
                                 <h4 class="card-title float-left mt-2">Add Booking</h4>
                                 
                             </div>
+<<<<<<< HEAD
+=======
+                            <h3 class="page-title mt-5">Add Booking</h3>
+>>>>>>> 864dd04 (Calendar added!)
                         </div>
                     </div>
                 </div>
-
-
-
-
 
                 <form action="{{ url('form/savebooking')}}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-lg-12">
-
                             <div class="row formtype">
-
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="sel1" name="name">
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="sel1" name="name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <select class="form-control  @error('room_type') is-invalid @enderror" id="sel2" name="room_type">
+                                        <select class="form-control @error('room_type') is-invalid @enderror" id="sel2" name="room_type">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -73,7 +97,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Total Members</label>
-                                        <select class="form-control  @error('room_number') is-invalid @enderror" id="sel3" name="room_number">
+                                        <select class="form-control @error('room_number') is-invalid @enderror" id="sel3" name="room_number">
                                             <option>Select</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -84,47 +108,47 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datetimepicker" name="date">
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="form-group">
+        <label>Date (B.S.)</label>
+        <div class="cal-icon">
+            <input type="text" class="form-control datepicker-ad" name="date">
+        </div>
+    </div>
+</div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control  @error('time') is-invalid @enderror" id="datetimepicker3" name="time">
+                                            <input type="text" class="form-control @error('time') is-invalid @enderror" id="datetimepicker3" name="time">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Arrival Date</label>
+                                        <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control  @error('') is-invalid @enderror datetimepicker" name="arrival_date">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Depature Date</label>
+                                        <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control  @error('departure_date') is-invalid @enderror datetimepicker" name="departure_date">
+                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="text" class="form-control  @error('email_id') is-invalid @enderror" id="usr" name="email_id">
+                                        <input type="email" class="form-control @error('email_id') is-invalid @enderror" id="usr" name="email_id">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control  @error('ph_number') is-invalid @enderror" id="usr1" name="ph_number">
+                                        <input type="text" class="form-control @error('ph_number') is-invalid @enderror" id="usr1" name="ph_number">
                                     </div>
                                 </div>
                                 <!-- <div class="col-md-4">
@@ -143,20 +167,15 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary buttonedit1" name="submit" value="Create Booking">Create Booking</button>
                 </form>
             </div>
         </div>
-
-
     </div>
 
-
     @include('admin.script')
-
 </body>
 
 </html>
