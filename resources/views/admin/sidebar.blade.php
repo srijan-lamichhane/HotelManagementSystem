@@ -11,12 +11,8 @@
 								<li><a href="{{url ('form/addbooking')}}"> Add Booking </a></li>
 							</ul>
 						</li>
-						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="{{url ('form/allbooking')}}"> All customers </a></li>
-								<li><a href="{{url ('form/allbooking')}}"> Edit Customer </a></li>
-								<li><a href="{{url ('form/allbooking')}}"> Add Customer </a></li>
-							</ul>
+						<li class="menu"> <a href="{{url ('form/customers')}}"><i class="fas fa-user"></i> <span> Customers </span> </a>
+
 						</li>
 						<li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
@@ -48,9 +44,9 @@
 						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="{{url ('employee/list')}}">Employees List </a></li>
-								<li><a href="leaves.html">Leaves </a></li>
-								<li><a href="holidays.html">Holidays </a></li>
-								<li><a href="attendance.html">Attendance </a></li>
+								<li><a href="{{url ('employee/leave')}}">Leaves </a></li>
+								<li><a href="{{url ('employee/holiday')}}">Holidays </a></li>
+								<li><a href="{{url ('employee/attendence')}}">Attendance </a></li>
 							</ul>
 						</li>
 						<!-- <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>

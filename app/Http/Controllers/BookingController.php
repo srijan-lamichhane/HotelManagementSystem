@@ -20,6 +20,11 @@ class BookingController extends Controller
     public function addbooking()
     {
         return view('admin.booking.addbooking');
+
+    }
+    public function customers()
+    {
+        return view('admin.customer.customer');
     }
 
 

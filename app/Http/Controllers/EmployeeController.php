@@ -10,4 +10,16 @@ class EmployeeController extends Controller
     {
         return view('admin.employee.employeeslist');
     }
+    public function leave()
+    {
+        return view('admin.employee.leave');
+    }
+    public function holiday()
+    {
+        return view('admin.employee.holiday');
+    }
+    public function attendence()
+    {
+        return view('admin.employee.attendence');
+    }
 }
