@@ -23,7 +23,6 @@
                                 <div class="mt-5">
                                 </div>
                                 <h4 class="card-title float-left mt-2">Customers Details</h4>
-                                <a href="{{url('form/addbooking')}}" class="btn btn-primary float-right veiwbutton ">Add Booking</a>
                             </div>
                         </div>
                     </div>

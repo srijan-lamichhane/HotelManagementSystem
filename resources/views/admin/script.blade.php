@@ -1,48 +1,55 @@
 <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-	<script src="{{ URL::to('admin/assets/js/jquery-3.5.1.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/js/jquery-ui.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/js/popper.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/js/bootstrap.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/plugins/slimscroll/jquery.slimscroll.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/plugins/raphael/raphael.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/plugins/morris/morris.min.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/js/chart.morris.js')}} "></script>
-	<script src="{{ URL::to('admin/assets/js/script.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/jquery-3.5.1.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/jquery-ui.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/popper.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/bootstrap.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/plugins/slimscroll/jquery.slimscroll.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/plugins/raphael/raphael.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/plugins/morris/morris.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/chart.morris.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/script.js')}} "></script>
 
-	<script src="{{ URL::to('admin/assets/js/moment.min.js')}} "></script>
-    <script src="{{ URL::to('admin/assets/js/bootstrap-datetimepicker.min.js')}} "></script>
-	<script>
+<script src="{{ URL::to('admin/assets/js/moment.min.js')}} "></script>
+<script src="{{ URL::to('admin/assets/js/bootstrap-datetimepicker.min.js')}} "></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
 
-<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/custom.css') }}">
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- Include Bootstrap JavaScript -->
+
+<!-- Include datetimepicker JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 
 <script>
-
-        $(function() {
-            $('#datetimepicker3').datetimepicker({
-                format: 'LT'
-
-            });
-			$(function() {
-    $('.datepicker-ad').datepicker({
-        dateFormat: 'mm/dd/yy',
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '-100:+100',
-    
-    });
-});
-
+    $(document).ready(function() {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD', // Set the desired date format
+            icons: {
+                time: 'fas fa-clock', // Specify the icon for the time picker
+                up: 'fas fa-chevron-up',
+                down: 'fas fa-chevron-down',
+                previous: 'fas fa-chevron-left',
+                next: 'fas fa-chevron-right',
+                today: 'fas fa-calendar-check-o',
+                clear: 'fas fa-trash',
+                close: 'fas fa-times'
+            }
         });
-    </script>
-	
-	
-   
 
+        $('#datetimepicker3').datetimepicker({
+            format: 'hh:mm A', // Set the desired time format
+            icons: {
+                time: 'fas fa-clock', // Specify the icon for the time picker
+                up: 'fas fa-chevron-up',
+                down: 'fas fa-chevron-down',
+                clear: 'fas fa-trash',
+                close: 'fas fa-times'
+            }
+        });
+    });
+</script>

@@ -53,13 +53,13 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="sel1" name="name">
+                                        <input type="text" class="form-control" required id="sel1" name="name">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <select class="form-control  @error('room_type') is-invalid @enderror" id="sel2" name="room_type">
+                                        <select class="form-control" required id="sel2" name="room_type">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -72,22 +72,15 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Total Members</label>
-                                        <select class="form-control  @error('room_number') is-invalid @enderror" id="sel3" name="room_number">
-                                            <option>Select</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <label>Room number</label>
+                                        <input type="number" class="form-control" required id="sel1" name="room_number">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label> Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
+                                            <input type="text" class="form-control datetimepicker" required name="date">
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +88,7 @@
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control  @error('time') is-invalid @enderror" id="datetimepicker3" name="time">
+                                            <input type="text" class="form-control datetimepicker3" required id="datetimepicker3" name="time">
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +96,7 @@
                                     <div class="form-group">
                                         <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
+                                            <input type="text" class="form-control  datetimepicker" required name="date">
                                         </div>
                                     </div>
                                 </div>
@@ -111,31 +104,23 @@
                                     <div class="form-group">
                                         <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date">
+                                            <input type="text" class="form-control  datetimepicker" required name="departure_date">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="email" class="form-control  @error('email_id') is-invalid @enderror" id="usr" name="email_id">
+                                        <input type="email" class="form-control" required id="usr" name="email_id">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control  @error('ph_number') is-invalid @enderror" id="usr1" name="ph_number">
+                                        <input type="text" class="form-control" required id="usr1" name="ph_number">
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>File Upload</label>
-                                        <div class="custom-file mb-3">
-                                            <input type="file" class="custom-file-input" id="customFile" name="filename">
-                                            <label class="custom-file-label" for="customFile">Choose file</label>
-                                        </div>
-                                    </div>
-                                </div> -->
+                     
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Message</label>

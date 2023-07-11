@@ -22,30 +22,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form>
+
+
+                <form method="POST" action="{{ url('/update_data_confirm', ['id' => $data->id]) }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-12">
+
                             <div class="row formtype">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Booking ID</label>
-                                        <input class="form-control" type="text" value="BKG-0001">
+                                        <input class="form-control @error('date') is-invalid @enderror" type="text" value="{{$data->bkg_id}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <select class="form-control" id="sel1" name="sellist1">
-                                            <option>Select</option>
-                                            <option>Jennifer Robinson</option>
-                                            <option>Terry Baker</option>
-                                        </select>
+                                        <input type="text" class="form-control @error('date') is-invalid @enderror" id="sel1" name="name" value="{{$data->name}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <select class="form-control" id="sel2" name="sellist1">
+                                        <select class="form-control @error('date') is-invalid @enderror" id="sel2" name="room_type" value="{{$data->room_type}}">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -56,24 +56,19 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Total Members</label>
-                                        <select class="form-control" id="sel3" name="sellist1">
-                                            <option>Select</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <label>Room number</label>
+                                        <input type="number" class="form-control  @error('name') is-invalid @enderror" id="sel1" name="room_number" value="{{$data->room_number}}">
                                     </div>
                                 </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label> Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date" value="{{$data->date}}">
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +76,7 @@
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror" id="datetimepicker3" name="time" value="{{$data->time}}">
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +84,7 @@
                                     <div class="form-group">
                                         <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date">
+                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date" value="{{$data->arrival_date}}">
                                         </div>
                                     </div>
                                 </div>
@@ -97,20 +92,20 @@
                                     <div class="form-group">
                                         <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date">
+                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date" value="{{$data->departure_date}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="email" class="form-control" id="usr">
+                                        <input type="email" class="form-control @error('date') is-invalid @enderror" id="usr" value="{{$data->email_id}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" id="usr1">
+                                        <input type="text" class="form-control @error('date') is-invalid @enderror" id="usr1" value="{{$data->email_id}}">
                                     </div>
                                 </div>
                                 <!-- <div class="col-md-4">
@@ -125,14 +120,15 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Message</label>
-                                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                                        <textarea class="form-control" rows="5" id="comment" name="text" value="{{$data->message}}"></textarea>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+
+                        </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary buttonedit">Save</button>
+                    <button type="submit" class="btn btn-primary buttonedit" name="submit" value="Save">Save</button>
+                </form>
             </div>
         </div>
 

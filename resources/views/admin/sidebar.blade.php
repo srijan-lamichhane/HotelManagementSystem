@@ -7,7 +7,7 @@
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="{{url ('form/allbooking')}}"> All Booking </a></li>
-								<li><a href="{{url ('form/editbooking')}}"> Edit Booking </a></li>
+							
 								<li><a href="{{url ('form/addbooking')}}"> Add Booking </a></li>
 							</ul>
 						</li>
@@ -44,9 +44,9 @@
 						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="{{url ('employee/list')}}">Employees List </a></li>
+								<li><a href="{{url ('form/addemployee')}}">Add Employee </a></li>
 								<li><a href="{{url ('employee/leave')}}">Leaves </a></li>
-								<li><a href="{{url ('employee/holiday')}}">Holidays </a></li>
-								<li><a href="{{url ('employee/attendence')}}">Attendance </a></li>
+
 							</ul>
 						</li>
 						<!-- <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>

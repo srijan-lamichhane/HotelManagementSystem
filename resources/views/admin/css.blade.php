@@ -7,4 +7,8 @@
 	<link rel="stylesheet" href="{{ URL::to('admin/assets/plugins/morris/morris.css')}} ">
 	<link rel="stylesheet" href="{{ URL::to('admin/assets/css/style.css')}} ">
 	
+    <!-- Include Bootstrap CSS -->
+
+    <!-- Include datetimepicker CSS -->
+
 	<link rel="stylesheet" type="text/css" href="{{ URL::to ('admin/assets/css/bootstrap-datetimepicker.min.css')}}">

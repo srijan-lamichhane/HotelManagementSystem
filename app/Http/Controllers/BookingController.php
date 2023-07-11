@@ -13,10 +13,10 @@ class BookingController extends Controller
         $data = Booking::all();
         return view('admin.booking.allbooking', compact('data'));
     }
-    public function editbooking()
-    {
-        return view('admin.booking.editbooking');
-    }
+    // public function editbooking()
+    // {
+    //     return view('admin.booking.editbooking');
+    // }
     public function addbooking()
     {
         return view('admin.booking.addbooking');
@@ -32,16 +32,6 @@ class BookingController extends Controller
     // save booking record
     public function saveRecord(Request $request)
     {
-            $request->validate([
-                
-                'name' => 'required|string|max:255',
-                'time' => 'required|string|max:255',
-                'arrival_date' => 'required|string|max:255',
-                'departure_date' => 'required|string|max:255',
-                'email_id' => 'required|string|max:255',
-                'ph_number' => 'required|string|max:255',
-
-            ]);
 
         // Create a new booking instance and set the values from the form
         $data = new Booking;
@@ -70,4 +60,34 @@ class BookingController extends Controller
         $data->delete();
         return redirect()->back()->with('message', 'Data deleted Sucessfully!');
     }
+    public function updaterecord($id)
+    {
+        $data = Booking::find($id);
+        return view('admin.booking.editbooking', compact('data'));
+        return redirect()->back()->with('message', 'Data updated Sucessfully!');
+    }
+
+    public function update_data_confirm(Request $request, $id)
+    {
+        $data = Booking::find($id);
+        
+        // Update the booking record with the new values from the form
+        $data->name = $request->input('name');
+        $data->room_type = $request->input('room_type');
+        $data->room_number = $request->input('room_number');
+        $data->date = $request->input('date');
+        $data->time = $request->input('time');
+        $data->arrival_date = $request->input('arrival_date');
+        $data->departure_date = $request->input('departure_date');
+        $data->email_id = $request->input('email_id');
+        $data->ph_number = $request->input('ph_number');
+        $data->message = $request->input('message');
+    
+        // Save the updated data to the database
+        $data->save();
+    
+        // Redirect to a success page or perform any other desired action
+        return redirect()->back()->with('message', 'Data updated Successfully!');
+    }
+    
 }

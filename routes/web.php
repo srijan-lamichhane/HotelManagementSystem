@@ -45,10 +45,12 @@ Route::get('/edit_profile',[AdminController::class,'edit_profile']);
 
 
 Route::get('form/allbooking',[BookingController::class,'allbooking']);
-Route::get('form/editbooking',[BookingController::class,'editbooking']);
+// Route::get('form/editbooking',[BookingController::class,'editbooking']);
 Route::get('form/addbooking',[BookingController::class,'addbooking']);
 Route::post('form/savebooking',[BookingController::class,'saveRecord']);
 Route::get('/delete_record/{id}',[BookingController::class,'deleterecord']);
+Route::get('/update_record/{id}', [BookingController::class, 'updaterecord'])->name('update_record');
+Route::post('/update_data_confirm', [BookingController::class, 'update_data_confirm'])->name('update_data_confirm');
 
 Route::get('form/customers',[BookingController::class,'customers']);
 
@@ -60,5 +62,8 @@ Route::post('/save_rooms',[RoomController::class,'saveRoom']);
 
 Route::get('employee/list',[EmployeeController::class,'listemployees']);
 Route::get('employee/leave',[EmployeeController::class,'leave']);
-Route::get('employee/holiday',[EmployeeController::class,'holiday']);
-Route::get('employee/attendence',[EmployeeController::class,'attendence']);
+Route::get('form/addemployee',[EmployeeController::class,'addemployee']);
+Route::post('form/saveemployee',[EmployeeController::class,'saveEmployee']);
+Route::get('/delete_emp/{id}',[EmployeeController::class,'deleteEmp']);
+
+
