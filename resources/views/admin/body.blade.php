@@ -14,7 +14,7 @@
 					<div class="card-body">
 						<div class="dash-widget-header">
 							<div>
-								<h3 class="card_widget_header">236</h3>
+								<h3 class="card_widget_header">200</h3>
 								<h6 class="text-muted">Total Booking</h6>
 							</div>
 							<div class="ml-auto mt-md-3 mt-lg-0"> <span class="opacity-7 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#009688" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus">
@@ -108,7 +108,7 @@
 				<div class="card card-table flex-fill">
 					<div class="card-header">
 						<h4 class="card-title float-left mt-2">Booking</h4>
-						<button type="button" class="btn btn-primary float-right veiwbutton">Veiw All</button>
+						<button type="button" href="{{url('form/allbooking')}}" class="btn btn-primary float-right veiwbutton">Veiw All</button>
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">

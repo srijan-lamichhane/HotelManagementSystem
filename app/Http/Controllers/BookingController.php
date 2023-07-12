@@ -45,7 +45,7 @@ class BookingController extends Controller
         $data->departure_date = $request->input('departure_date');
         $data->email_id = $request->input('email_id');
         $data->ph_number = $request->input('ph_number');
-        $data->message = $request->input('message');
+        $data->message = $request->input('text');
         
         // Save the data to the database
         $data->save();
@@ -81,7 +81,7 @@ class BookingController extends Controller
         $data->departure_date = $request->input('departure_date');
         $data->email_id = $request->input('email_id');
         $data->ph_number = $request->input('ph_number');
-        $data->message = $request->input('message');
+        $data->message = $request->input('text');
     
         // Save the updated data to the database
         $data->save();

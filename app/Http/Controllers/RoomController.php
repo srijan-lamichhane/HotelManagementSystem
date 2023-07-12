@@ -9,7 +9,8 @@ class RoomController extends Controller
     //view all booking
     public function allrooms()
     {
-        return view('admin.room.allrooms');
+        $addrooms = addrooms::all();
+        return view('admin.room.allrooms',compact('addrooms'));
     }
 
     public function editrooms()
@@ -37,5 +38,13 @@ class RoomController extends Controller
         // Redirect to a success page or perform any other desired action
         return redirect('/add_rooms');
     }
+
+    public function deleterecord1($id)
+    {
+        $addrooms = addrooms::find($id);
+        $addrooms->delete();
+        return redirect()->back()->with('message', 'Data deleted Sucessfully!');
+    }
+
     
 }

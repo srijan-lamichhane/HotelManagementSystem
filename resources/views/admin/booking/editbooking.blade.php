@@ -24,8 +24,9 @@
                 </div>
 
 
-                <form method="POST" action="{{ url('/update_data_confirm', ['id' => $data->id]) }}">
+                <form method="POST" action="{{ route('update_data_confirm', $data->id) }}">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col-lg-12">
 

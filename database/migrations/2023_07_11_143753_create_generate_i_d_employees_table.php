@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         DB::unprepared('
-        CREATE TRIGGER id_store BEFORE INSERT ON employees FOR EACH ROW
+        CREATE TRIGGER id_emp BEFORE INSERT ON employees FOR EACH ROW
             BEGIN
                 INSERT INTO sequence_tbls VALUES (NULL);
                 SET NEW.emp_id = CONCAT ("EMP-", LPAD(LAST_INSERT_ID(),4,"0"));
@@ -29,6 +29,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::unprepared('DROP TRIGGER "id_store"');
+        DB::unprepared('DROP TRIGGER `id_emp`');
+        Schema::dropIfExists('employees');
     }
+    
 };

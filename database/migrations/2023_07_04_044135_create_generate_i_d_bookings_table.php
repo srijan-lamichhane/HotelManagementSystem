@@ -30,5 +30,6 @@ return new class extends Migration
     public function down(): void
     {
         DB::unprepared('DROP TRIGGER "id_store"');
+        Schema::dropIfExists('bookings');
     }
 };

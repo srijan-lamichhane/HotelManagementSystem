@@ -42,97 +42,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($addrooms as $addroom)
                                             <tr>
-                                                <td>101</td>
+                                                <td>{{$addroom->room_number}}</td>
 
-                                                <td>double</td>
-                                                <td>1st</td>
-                                                <td>2500/per day </td>
+                                                <td>{{$addroom->room_type}}</a> </td>
+                                                <td>{{$addroom->floor}}</td>
+                                                <td>{{$addroom->price}}</td>
+                                                
                                                 <td>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
+                                                    <div class="actions">
+                                                        <a href="#" class="btn btn-sm jbg-success-light mr-2 activeButton">Available</a>
+                                                    </div>
                                                 </td>
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('/editrooms')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$addroom->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>102</td>
-
-                                                <td>Single</td>
-                                                <td>1st</td>
-                                                <td>1500/per day </td>
-                                                <td>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">available</a> </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>103</td>
-
-                                                <td>Double</td>
-                                                <td>1st</td>
-                                                <td>2500/per day </td>
-                                                <td>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>201</td>
-
-                                                <td>Single</td>
-                                                <td>2nd</td>
-                                                <td>1500/per day </td>
-                                                <td>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>202</td>
-
-                                                <td>Double</td>
-                                                <td>2nd</td>
-                                                <td>1500/per day </td>
-                                                <td>
-
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>203</td>
-
-                                                <td>Single</td>
-                                                <td>2nd</td>
-                                                <td>1500/per day </td>
-                                                <td>
-                                                    <div class="actions"> <a href="#" class="btn btn-sm bg-success-light mr-2">booked</a> </div>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('form/editbooking')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            @endforeach
+                                     
                                         </tbody>
                                     </table>
                                 </div>
@@ -147,7 +77,7 @@
                         <div class="modal-body text-center"> <img src="{{URL::to('admin/assets/img/sent.png')}}" alt="" width="50" height="46">
                             <h3 class="delete_class">Are you sure want to delete this Asset?</h3>
                             <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <a class="btn btn-danger" href="{{url('delete_record1',$addroom->id)}}">Delete</a>
                             </div>
                         </div>
                     </div>
@@ -155,7 +85,27 @@
             </div>
         </div>
     </div>
+
     @include('admin.script')
+
+    <script>
+        $(document).ready(function() {
+            $(".activeButton").click(function(e) {
+                e.preventDefault();
+
+                var $button = $(this);
+                var isActive = $button.hasClass("active");
+
+                if (isActive) {
+                    $button.removeClass("active btn-danger").addClass("bg-success-light").text("Active");
+                } else {
+                    $button.addClass("active btn-danger").removeClass("bg-success-light").text("Inactive");
+                }
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>

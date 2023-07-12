@@ -94,11 +94,7 @@
                                                 <td>{{$employee->ph_number}}</td>
                                                 <td>{{$employee->join_date}}</td>
                                                 <td>{{$employee->role}}</td>
-                                                <td>
-                                                    <div class="actions">
-                                                        <a href="#" class="btn btn-sm bg-success-light mr-2 activeButton">Active</a>
-                                                    </div>
-                                                </td>
+                                       
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_record',$employee->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$employee->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>

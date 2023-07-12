@@ -81,7 +81,7 @@
                                                 <!-- <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2652494b4b5f44435448474a66435e474b564a430845494b">[email&#160;protected]</a></td> -->
                                                 <td>{{$data->message}}</td>
                                                 <td>
-                                                    <div class="actions">
+                                                <div class="actions">
                                                         <a href="#" class="btn btn-sm bg-success-light mr-2 activeButton">Active</a>
                                                     </div>
                                                 </td>
