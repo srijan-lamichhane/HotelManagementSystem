@@ -58,7 +58,7 @@
                                         <input type="text" class="form-control" required id="usr1" name="ph_number">
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Join Date</label>
@@ -67,12 +67,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
+
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Role</label>
-                                        <select class="form-control" name="role" >
+                                        <select class="form-control" name="role">
                                             <option>Manager</option>
                                             <option selected>Staff</option>
                                             <option>Accountant</option>

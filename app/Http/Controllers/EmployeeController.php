@@ -32,11 +32,11 @@ class EmployeeController extends Controller
         $employee->email_id = $request->input('email_id');
         $employee->ph_number = $request->input('ph_number');
         $employee->join_date = $request->input('join_date');
-        $employee->role = $request->input('role');
-        
+        $employee->role = $request->input('role');    
+            
         $employee->save();
 
-        return redirect()-> back()->with('message', 'New Employee Added Sucessfully!');
+        return redirect()->to(url('employee/list'))->with('message', 'New Employee Added Sucessfully!');
     }
 
     public function deleteEmp($id)

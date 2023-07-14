@@ -18,6 +18,12 @@
                 <div class="page-header">
                     <div class="row align-items-center">
                         <div class="col">
+                            @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                {{session()->get('message')}}
+                            </div>
+                            @endif
                             <h3 class="page-title mt-5">Edit Booking</h3>
                         </div>
                     </div>
@@ -34,19 +40,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Booking ID</label>
-                                        <input class="form-control @error('date') is-invalid @enderror" type="text" value="{{$data->bkg_id}}">
+                                        <input class="form-control" required type="text" value="{{$data->bkg_id}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" class="form-control @error('date') is-invalid @enderror" id="sel1" name="name" value="{{$data->name}}">
+                                        <input type="text" class="form-control" required id="sel1" name="name" value="{{$data->name}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <select class="form-control @error('date') is-invalid @enderror" id="sel2" name="room_type" value="{{$data->room_type}}">
+                                        <select class="form-control" required id="sel2" name="room_type" value="{{$data->room_type}}">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -61,7 +67,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Room number</label>
-                                        <input type="number" class="form-control  @error('name') is-invalid @enderror" id="sel1" name="room_number" value="{{$data->room_number}}">
+                                        <input type="number" class="form-control " required id="sel1" name="room_number" value="{{$data->room_number}}">
                                     </div>
                                 </div>
 
@@ -69,7 +75,7 @@
                                     <div class="form-group">
                                         <label> Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date" value="{{$data->date}}">
+                                            <input type="text" class="form-control datetimepicker" required name="date" value="{{$data->date}}">
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +83,7 @@
                                     <div class="form-group">
                                         <label>Time</label>
                                         <div class="time-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror" id="datetimepicker3" name="time" value="{{$data->time}}">
+                                            <input type="text" class="form-control" required id="datetimepicker3" name="time" value="{{$data->time}}">
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +91,7 @@
                                     <div class="form-group">
                                         <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('date') is-invalid @enderror datepicker-ad" name="date" value="{{$data->arrival_date}}">
+                                            <input type="text" class="form-control datetimepicker" required name="arrival_date" value="{{$data->arrival_date}}">
                                         </div>
                                     </div>
                                 </div>
@@ -93,20 +99,20 @@
                                     <div class="form-group">
                                         <label>Departure Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control @error('departure_date') is-invalid @enderror datepicker-ad" name="departure_date" value="{{$data->departure_date}}">
+                                            <input type="text" class="form-control datetimepicker" required name="departure_date" value="{{$data->departure_date}}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="email" class="form-control @error('date') is-invalid @enderror" id="usr" value="{{$data->email_id}}">
+                                        <input type="email" class="form-control" required name="email_id" value="{{$data->email_id}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control @error('date') is-invalid @enderror" id="usr1" value="{{$data->email_id}}">
+                                        <input type="number" class="form-control" required name="ph_number" value="{{$data->ph_number}}">
                                     </div>
                                 </div>
                                 <!-- <div class="col-md-4">
@@ -121,7 +127,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Message</label>
-                                        <textarea class="form-control" rows="5" id="comment" name="text" value="{{$data->message}}"></textarea>
+                                        <textarea class="form-control" rows="5" id="comment" name="message" value="{{$data->message}}"></textarea>
                                     </div>
                                 </div>
                             </div>

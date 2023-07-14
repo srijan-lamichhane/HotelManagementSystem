@@ -96,7 +96,7 @@
                                     <div class="form-group">
                                         <label> Arrival Date</label>
                                         <div class="cal-icon">
-                                            <input type="text" class="form-control  datetimepicker" required name="date">
+                                            <input type="text" class="form-control  datetimepicker" required name="arrival_date">
                                         </div>
                                     </div>
                                 </div>

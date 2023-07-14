@@ -97,7 +97,7 @@
                                        
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_record',$employee->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$employee->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_emp',$employee->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_emp',$employee->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -117,7 +117,7 @@
                         <div class="modal-body text-center"> <img src="{{URL::to('admin/assets/img/sent.png')}}" alt="" width="50" height="46">
                             <h3 class="delete_class">Are you sure want to delete this Asset?</h3>
                             <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                                <a class="btn btn-danger" href="{{url('delete_record',$employee->id)}}">Delete</a>
+                                <a class="btn btn-danger" href="{{url('delete_emp',$employee->id)}}">Delete</a>
                             </div>
                         </div>
                     </div>
