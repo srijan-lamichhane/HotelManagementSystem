@@ -88,10 +88,11 @@
                                             <tr>
                                                 @foreach($employee as $employee)
                                                 
-                                                <td>{{$employee->emp_id}}</td>
+                                                <td>EMP-{{ sprintf('%03d', $employee->id) }}</td>
                                                 <td>{{$employee->name}}</a> </td>
-                                                <td>{{$employee->email_id}}</td>
-                                                <td>{{$employee->ph_number}}</td>
+                                                <td>{{$employee->email}}</td>
+                                                <td>{{$employee->phone}}</td>
+                                                <td>{{$employee->address}}</td>
                                                 <td>{{$employee->join_date}}</td>
                                                 <td>{{$employee->role}}</td>
                                        

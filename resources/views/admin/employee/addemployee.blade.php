@@ -28,14 +28,14 @@
                                     </div>
                                     @endif
                                 </div>
-                                <h4 class="card-title float-left mt-2">Add Booking</h4>
+                                <h4 class="card-title float-left mt-2">Add Employee</h4>
 
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <form action="{{ url('form/saveemployee')}}" method="POST">
+                <form method="POST" action="{{ url('form/saveemployee') }}">
                     @csrf
                     <div class="row">
                         <div class="col-lg-12">
@@ -49,13 +49,20 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Email ID</label>
-                                        <input type="email" class="form-control" required id="usr" name="email_id">
+                                        <input type="email" class="form-control" required id="usr" name="email">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" required id="usr1" name="ph_number">
+                                        <input type="number" class="form-control" required id="usr1" name="phone">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" required id="sel1" name="address">
                                     </div>
                                 </div>
 
@@ -67,8 +74,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Role</label>
@@ -81,6 +86,21 @@
                                         </select>
                                     </div>
                                 </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="password" value="{{ __('Password') }}">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" required autocomplete="new-password">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="password_confirmation" value="{{ __('Confirm Password') }}">Confirm Password</label>
+                                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required autocomplete="new-password">
+                                    </div>
+                                </div>
+
 
 
                             </div>

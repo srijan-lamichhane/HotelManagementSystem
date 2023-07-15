@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
     public function listemployees()
     {
-        $employee = Employee::all();
+        $employee = User::all();
         return view('admin.employee.employeeslist', compact('employee'));
     }
 
@@ -26,13 +28,18 @@ class EmployeeController extends Controller
     public function saveEmployee(Request $request)
     {
 
-        $employee = new Employee;
-        $employee->emp_id = $request->input('emp_id');
+        $validatedData = $request->validate([
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        $employee = new User;
         $employee->name = $request->input('name');
-        $employee->email_id = $request->input('email_id');
-        $employee->ph_number = $request->input('ph_number');
+        $employee->email = $request->input('email');
+        $employee->phone = $request->input('phone');
+        $employee->address = $request->input('address');
         $employee->join_date = $request->input('join_date');
         $employee->role = $request->input('role');    
+        $employee->password = Hash::make($request->input('password'));
             
         $employee->save();
 
@@ -41,7 +48,7 @@ class EmployeeController extends Controller
 
     public function deleteEmp($id)
     {
-        $employee = Employee::find($id);
+        $employee = User::find($id);
         $employee->delete();
         return redirect()->back()->with('message', 'Data deleted Sucessfully!');
     }
