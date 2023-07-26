@@ -85,9 +85,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($employee as $employee)
                                             <tr>
-                                                @foreach($employee as $employee)
-                                                
                                                 <td>EMP-{{ sprintf('%03d', $employee->id) }}</td>
                                                 <td>{{$employee->name}}</a> </td>
                                                 <td>{{$employee->email}}</td>

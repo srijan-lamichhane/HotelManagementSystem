@@ -6,6 +6,7 @@ use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
@@ -17,20 +18,21 @@ class EmployeeController extends Controller
 
     public function leave()
     {
-        return view('admin.employee.leave');
+        $leave = Employee::all();
+        return view('admin.employee.leave', compact('leave'));
     }
 
     public function addemployee()
     {
         return view('admin.employee.addemployee');
     }
+    public function addleave()
+    {
+        return view('admin.employee.addleave');
+    }
 
     public function saveEmployee(Request $request)
     {
-
-        $validatedData = $request->validate([
-            'password' => 'required|min:8|confirmed',
-        ]);
 
         $employee = new User;
         $employee->name = $request->input('name');
@@ -38,9 +40,16 @@ class EmployeeController extends Controller
         $employee->phone = $request->input('phone');
         $employee->address = $request->input('address');
         $employee->join_date = $request->input('join_date');
-        $employee->role = $request->input('role');    
+        $employee->role = $request->input('role');
         $employee->password = Hash::make($request->input('password'));
-            
+        // Handle the file upload and store the 'filename'
+        if ($request->hasFile('filename')) {
+            $file = $request->file('filename');
+            $path = $file->store('files', 'public');
+            $employee->filename = $path;
+        }
+
+
         $employee->save();
 
         return redirect()->to(url('employee/list'))->with('message', 'New Employee Added Sucessfully!');
@@ -53,4 +62,28 @@ class EmployeeController extends Controller
         return redirect()->back()->with('message', 'Data deleted Sucessfully!');
     }
 
+
+
+    //for employee leave
+    public function saveLeave(Request $request)
+    {
+
+        $leave = new Employee();
+        $leave->e_id = $request->input('e_id');
+        $leave->name = $request->input('name');
+        $leave->leave_type = $request->input('leave_type');
+        $leave->from = $request->input('from');
+        $leave->to = $request->input('to');
+        $leave->days = $request->input('days');
+        $leave->reason = $request->input('reason');
+        $leave->save();
+
+        return redirect()->to(url('employee/leave'))->with('message', 'Leave Added Sucessfully!');
+    }
+    public function deleteLeave($id)
+    {
+        $leave = Employee::find($id);
+        $leave->delete();
+        return redirect()->back()->with('message', 'Data deleted Sucessfully!');
+    }
 }

@@ -24,6 +24,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
+<!-- script for calander -->
+<script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+
 
 <script>
     $(document).ready(function() {
@@ -50,6 +54,14 @@
                 clear: 'fas fa-trash',
                 close: 'fas fa-times'
             }
+        });
+    });
+
+    $(document).ready(function() {
+        // When a file is selected, update the label text
+        $('.custom-file-input').on('change', function() {
+            var fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass('selected').html(fileName);
         });
     });
 </script>

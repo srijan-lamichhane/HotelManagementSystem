@@ -1,27 +1,26 @@
 <div class="sidebar" id="sidebar">
-			<div class="sidebar-inner slimscroll">
-				<div id="sidebar-menu" class="sidebar-menu">
-					<ul>
-						<li class="active"> <a href="{{url('redirect')}}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
-						<li class="list-divider"></li>
-						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="{{url ('form/allbooking')}}"> All Booking </a></li>
-							
-								<li><a href="{{url ('form/addbooking')}}"> Add Booking </a></li>
-							</ul>
-						</li>
-						<li class="menu"> <a href="{{url ('form/customers')}}"><i class="fas fa-user"></i> <span> Customers </span> </a>
+	<div class="sidebar-inner slimscroll">
+		<div id="sidebar-menu" class="sidebar-menu">
+			<ul>
+				<li class="active"> <a href="{{url('redirect')}}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
+				<li class="list-divider"></li>
+				<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
+					<ul class="submenu_class" style="display: none;">
+						<li><a href="{{url ('form/allbooking')}}"> All Booking </a></li>
 
-						</li>
-						<li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="{{url ('/all_rooms')}}">All Rooms </a></li>
-								<li><a href="{{url ('/edit_rooms')}}"> Edit Rooms </a></li>
-								<li><a href="{{url ('/add_rooms')}}"> Add Rooms </a></li>
-							</ul>
-						</li>	
-						<!-- <li> <a href="pricing.html"><i class="far fa-money-bill-alt"></i> <span>Pricing</span></a> </li>
+						<li><a href="{{url ('form/addbooking')}}"> Add Booking </a></li>
+					</ul>
+				</li>
+				<li class="menu"> <a href="{{url ('form/customers')}}"><i class="fas fa-user"></i> <span> Customers </span> </a>
+
+				</li>
+				<li class="submenu"> <a href="#"><i class="fas fa-key"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
+					<ul class="submenu_class" style="display: none;">
+						<li><a href="{{url ('/all_rooms')}}">All Rooms </a></li>
+						<li><a href="{{url ('/add_rooms')}}"> Add Rooms </a></li>
+					</ul>
+				</li>
+				<!-- <li> <a href="pricing.html"><i class="far fa-money-bill-alt"></i> <span>Pricing</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fas fa-share-alt"></i> <span> Apps </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="chat.html"><i class="fas fa-comments"></i><span> Chat </span></a></li>
@@ -41,15 +40,16 @@
 								</li>
 							</ul>
 						</li> -->
-						<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="{{url ('employee/list')}}">Employees List </a></li>
-								<li><a href="{{url ('form/addemployee')}}">Add Employee </a></li>
-								<li><a href="{{url ('employee/leave')}}">Leaves </a></li>
+				<li class="submenu"> <a href="#"><i class="fas fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
+					<ul class="submenu_class" style="display: none;">
+						<li><a href="{{url ('employee/list')}}">Employees List </a></li>
+						<li><a href="{{url ('form/addemployee')}}">Add Employee </a></li>
+						<li><a href="{{url ('employee/leave')}}">Leaves </a></li>
+						<li><a href="{{url ('form/addleave')}}">AddLeave</a></li>
 
-							</ul>
-						</li>
-						<!-- <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
+					</ul>
+				</li>
+				<!-- <li class="submenu"> <a href="#"><i class="far fa-money-bill-alt"></i> <span> Accounts </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="invoices.html">Invoices </a></li>
 								<li><a href="payments.html">Payments </a></li>
@@ -57,15 +57,15 @@
 								<li><a href="taxes.html">Taxes </a></li>
 								<li><a href="provident-fund.html">Provident Fund </a></li>
 							</ul>
-						</li>
-						<li class="submenu"> <a href="#"><i class="fas fa-book"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
+						</li> -->
+				<!-- <li class="submenu"> <a href="#"><i class="fas fa-book"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="salary.html">Employee Salary </a></li>
 								<li><a href="salary-veiw.html">Payslip </a></li>
 							</ul>
-						</li>
-						<li> <a href="calendar.html"><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
-						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Blog </span> <span class="menu-arrow"></span></a>
+						</li> -->
+				<li> <a href="{{url ('/calander')}}"><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
+				<!-- <li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Blog </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="blog.html">Blog </a></li>
 								<li><a href="blog-details.html">Blog Veiw </a></li>
@@ -73,15 +73,15 @@
 								<li><a href="edit-blog.html">Edit Blog </a></li>
 							</ul>
 						</li> -->
-						<!-- <li> <a href="assets.html"><i class="fas fa-cube"></i> <span>Assests</span></a> </li> -->
-						<!-- <li> <a href="activities.html"><i class="far fa-bell"></i> <span>Activities</span></a> </li> -->
-						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Billing </span> <span class="menu-arrow"></span></a>
-							<ul class="submenu_class" style="display: none;">
-								<li><a href="expense-reports.html">Expense Report </a></li>
-								<li><a href="invoice-reports.html">Invoice Report </a></li>
-							</ul>
-						</li>
-						<!-- <li> <a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a> </li>
+				<!-- <li> <a href="assets.html"><i class="fas fa-cube"></i> <span>Assests</span></a> </li> -->
+				<!-- <li> <a href="activities.html"><i class="far fa-bell"></i> <span>Activities</span></a> </li> -->
+				<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Billing </span> <span class="menu-arrow"></span></a>
+					<ul class="submenu_class" style="display: none;">
+						<li><a href="expense-reports.html">Expense Report </a></li>
+						<li><a href="invoice-reports.html">Invoice Report </a></li>
+					</ul>
+				</li>
+				<!-- <li> <a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a> </li>
 						<li class="list-divider"></li>
 						<li class="menu-title mt-3"> <span>UI ELEMENTS</span> </li>
 						<li class="submenu"> <a href="#"><i class="fas fa-laptop"></i> <span> Components </span> <span class="menu-arrow"></span></a>
@@ -127,7 +127,7 @@
 								<li><a href="">Level 2 </a></li>
 							</ul>
 						</li> -->
-					</ul>
-				</div>
-			</div>
+			</ul>
 		</div>
+	</div>
+</div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\CalanderController;
 use Illuminate\Support\Facades\App;
 
 Route::get('/',[HomeController::class,'index']);
@@ -52,7 +53,13 @@ Route::get('/delete_record1/{id}',[RoomController::class,'deleterecord1']);
 Route::get('employee/list',[EmployeeController::class,'listemployees']);
 Route::get('employee/leave',[EmployeeController::class,'leave']);
 Route::get('form/addemployee',[EmployeeController::class,'addemployee']);
+Route::get('form/addleave',[EmployeeController::class,'addleave']);
 Route::post('form/saveemployee',[EmployeeController::class,'saveEmployee']);
+Route::post('form/saveleave',[EmployeeController::class,'saveLeave']);
 Route::get('/delete_emp/{id}',[EmployeeController::class,'deleteEmp']);
+Route::get('/delete_leave/{id}',[EmployeeController::class,'deleteLeave']);
 
+
+
+Route::get('/calander',[CalanderController::class,'calander']);
 

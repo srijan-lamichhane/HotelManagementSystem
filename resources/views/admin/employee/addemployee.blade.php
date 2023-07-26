@@ -76,6 +76,14 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label>D.O.B</label>
+                                        <div class="cal-icon">
+                                            <input type="text" class="form-control datetimepicker" required name="birth_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label>Role</label>
                                         <select class="form-control" name="role">
                                             <option>Manager</option>
@@ -101,7 +109,15 @@
                                     </div>
                                 </div>
 
-
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>File Upload</label>
+                                        <div class="custom-file mb-3">
+                                            <input type="file" class="custom-file-input" id="customFile" name="filename">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
 

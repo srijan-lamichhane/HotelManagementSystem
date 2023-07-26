@@ -106,72 +106,23 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Haylie Feeney</td>
-												<td>Casual Leave</td>
-												<td>13 May 2018</td>
-												<td>13 July 2018</td>
-												<td>2 days</td>
-												<td>Not feeling well</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action">
-														<a href="#" class="action-icon dropdown-toggle"
-															data-toggle="dropdown" aria-expanded="false"><i
-																class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right">
-															<a class="dropdown-item" href="edit-leave.html"><i
-																	class="fas fa-pencil-alt m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal"
-																data-target="#delete_asset"><i
-																	class="fas fa-trash-alt m-r-5"></i> Delete</a>
-														</div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>Haylie Feeney</td>
-												<td>Casual Leave</td>
-												<td>13 May 2018</td>
-												<td>13 July 2018</td>
-												<td>2 days</td>
-												<td>Not feeling well</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action">
-														<a href="#" class="action-icon dropdown-toggle"
-															data-toggle="dropdown" aria-expanded="false"><i
-																class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right">
-															<a class="dropdown-item" href="edit-leave.html"><i
-																	class="fas fa-pencil-alt m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal"
-																data-target="#delete_asset"><i
-																	class="fas fa-trash-alt m-r-5"></i> Delete</a>
-														</div>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>Haylie Feeney</td>
-												<td>Casual Leave</td>
-												<td>13 May 2018</td>
-												<td>13 July 2018</td>
-												<td>2 days</td>
-												<td>Not feeling well</td>
-												<td class="text-right">
-													<div class="dropdown dropdown-action">
-														<a href="#" class="action-icon dropdown-toggle"
-															data-toggle="dropdown" aria-expanded="false"><i
-																class="fas fa-ellipsis-v ellipse_color"></i></a>
-														<div class="dropdown-menu dropdown-menu-right">
-															<a class="dropdown-item" href="edit-leave.html"><i
-																	class="fas fa-pencil-alt m-r-5"></i> Edit</a>
-															<a class="dropdown-item" href="#" data-toggle="modal"
-																data-target="#delete_asset"><i
-																	class="fas fa-trash-alt m-r-5"></i> Delete</a>
-														</div>
-													</div>
-												</td>
-											</tr>
+										@foreach($leave as $leave)
+                                            <tr>
+                                                <td>{{$leave->e_id}}</td>
+                                                <td>{{$leave->name}}</a> </td>
+                                                <td>{{$leave->leave_type}}</td>
+                                                <td>{{$leave->from}}</td>
+                                                <td>{{$leave->to}}</td>
+                                                <td>{{$leave->days}}</td>
+                                                <td>{{$leave->reason}}</td>
+                                       
+                                                <td class="text-right">
+                                                    <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_emp',$leave->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_emp',$leave->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @endforeach
 										</tbody>
 									</table>
 								</div>
@@ -180,19 +131,18 @@
 					</div>
 				</div>
 			</div>
-			<div id="delete_asset" class="modal fade delete-modal" role="dialog">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-body text-center">
-							<img src="assets/img/sent.png" alt="" width="50" height="46">
-							<h3 class="delete_class">Are you sure want to delete this Asset?</h3>
-							<div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div id="delete_asset" class="modal fade delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center"> <img src="{{URL::to('admin/assets/img/sent.png')}}" alt="" width="50" height="46">
+                            <h3 class="delete_class">Are you sure want to delete this Asset?</h3>
+                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                                <a class="btn btn-danger" href="{{url('delete_emp',$leave->id)}}">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
 
     </div>
