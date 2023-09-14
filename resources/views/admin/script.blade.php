@@ -18,15 +18,16 @@
 <!-- Include jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Include Bootstrap JavaScript -->
-
 <!-- Include datetimepicker JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 <!-- script for calander -->
-<script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
-<script src="assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+<script src="{{ URL::to('admin/assets/plugins/fullcalendar/fullcalendar.min.js')}}"></script>
+<script src="{{ URL::to('admin/assets/plugins/fullcalendar/jquery.fullcalendar.js')}}"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.js'></script>
+
 
 
 <script>

@@ -6,10 +6,13 @@
 	<link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css">
 	<link rel="stylesheet" href="{{ URL::to('admin/assets/plugins/morris/morris.css')}} ">
 	<link rel="stylesheet" href="{{ URL::to('admin/assets/css/style.css')}} ">
-	<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
-	
-    <!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="{{ URL::to('admin/assets/plugins/fullcalendar/fullcalendar.min.css')}}">
 
-    <!-- Include datetimepicker CSS -->
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css' rel='stylesheet' />
+
+
+
+
+	<!-- Include datetimepicker CSS -->
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::to ('admin/assets/css/bootstrap-datetimepicker.min.css')}}">
