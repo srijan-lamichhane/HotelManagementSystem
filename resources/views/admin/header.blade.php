@@ -95,8 +95,8 @@
 		</li>
 	</ul>
 	<div class="top-nav-search">
-		<form>
-			<input type="text" class="form-control" placeholder="Search here">
+		<form action="">
+			<input type="search" name="search" class="form-control form-control-sm" placeholder="Search here">
 			<button class="btn" type="submit"><i class="fas fa-search"></i></button>
 		</form>
 	</div>

@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use Illuminate\Support\Facades\View;
 
 class BookingController extends Controller
 {
     //view all booking
     public function allbooking()
     {
+
+        //retrive all booking data
         $data = Booking::all();
         return view('admin.booking.allbooking', compact('data'));
     }
@@ -17,7 +20,6 @@ class BookingController extends Controller
     public function addbooking()
     {
         return view('admin.booking.addbooking');
-
     }
     public function customers()
     {
@@ -32,7 +34,6 @@ class BookingController extends Controller
 
         // Create a new booking instance and set the values from the form
         $data = new Booking;
-        $data->bkg_id = $request->input('bkg_id');
         $data->name = $request->input('name');
         $data->room_type = $request->input('room_type');
         $data->room_number = $request->input('room_number');
@@ -43,12 +44,12 @@ class BookingController extends Controller
         $data->email_id = $request->input('email_id');
         $data->ph_number = $request->input('ph_number');
         $data->message = $request->input('message');
-        
+
         // Save the data to the database
         $data->save();
 
         // Redirect to a success page or perform any other desired action
-        return redirect()-> to(url('form/allbooking'))->with('message', 'New booking Added Sucessfully!');
+        return redirect()->to(url('form/allbooking'))->with('message', 'New booking Added Sucessfully!');
     }
 
     public function deleterecord($id)
@@ -66,7 +67,7 @@ class BookingController extends Controller
     public function update_data_confirm(Request $request, $id)
     {
         $data = Booking::find($id);
-        
+
         // Update the booking record with the new values from the form
         $data->name = $request->input('name');
         $data->room_type = $request->input('room_type');
@@ -78,13 +79,11 @@ class BookingController extends Controller
         $data->email_id = $request->input('email_id');
         $data->ph_number = $request->input('ph_number');
         $data->message = $request->input('message');
-    
+
         // Save the updated data to the database
         $data->save();
-    
+
         // Redirect to a success page or perform any other desired action
         return redirect()->to(url('form/allbooking'))->with('message', 'Data updated successfully!');
-
     }
-    
 }

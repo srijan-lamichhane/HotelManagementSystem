@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CalanderController;
+use App\Http\Controllers\CheckController;
 use Illuminate\Support\Facades\App;
 
 Route::get('/',[HomeController::class,'index']);
@@ -62,4 +63,10 @@ Route::get('/delete_leave/{id}',[EmployeeController::class,'deleteLeave']);
 
 
 Route::get('/calander',[CalanderController::class,'calander']);
+
+
+Route::get('/check',[CheckController::class,'index']);
+Route::get('/sheet-report',[CheckController::class,'sheetReport']);
+Route::post('/check_store',[CheckController::class,'CheckStore']);
+
 

@@ -10,7 +10,9 @@
 
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.css' rel='stylesheet' />
 
+	<link href="{{ URL::to('admin/assets/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css')}}" rel="stylesheet" type="text/css" media="screen">
 
+	
 
 
 	<!-- Include datetimepicker CSS -->
