@@ -40,6 +40,31 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+
+                        <form action="">
+                            <div class="row formtype">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <input type="text" name="search" placeholder="search name or email" class="form-control" value="{{$search}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button class="btn btn-success btn-block mt-0 search_button"> Search </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card card-table">
@@ -101,6 +126,7 @@
                     </div>
                 </div>
             </div>
+            
             <div id="delete_asset" class="modal fade delete-modal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -113,6 +139,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
     @include('admin.script')

@@ -9,12 +9,19 @@ use Illuminate\Support\Facades\View;
 class BookingController extends Controller
 {
     //view all booking
-    public function allbooking()
-    {
+    public function allbooking(Request $request)
+    {   
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            //where
+            $data = Booking::where('name','LIKE',"%$search%")->orWhere('email_id','LIKE',"%$search%")->get();
+        } else {
 
-        //retrive all booking data
-        $data = Booking::all();
-        return view('admin.booking.allbooking', compact('data'));
+            $data = Booking::all();
+        }
+
+
+        return view('admin.booking.allbooking', compact('data','search'));
     }
 
     public function addbooking()
