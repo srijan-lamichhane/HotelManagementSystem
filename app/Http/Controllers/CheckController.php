@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Flash;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\User;
 use App\Models\attendence;
 use App\Models\Leave;
 
@@ -12,7 +13,7 @@ class CheckController extends Controller
 {
     public function index()
     {
-        return view('admin.employee.check')->with(['employees' => Employee::all()]);
+        return view('admin.employee.check')->with(['employees' => User::all()]);
     }
 
     public function CheckStore(Request $request)
@@ -20,7 +21,7 @@ class CheckController extends Controller
         if (isset($request->attd)) {
             foreach ($request->attd as $keys => $values) {
                 foreach ($values as $key => $value) {
-                    if ($employee = Employee::whereId(request('emp_id'))->first()) {
+                    if ($employee = User::whereId(request('emp_id'))->first()) {
                         if (
                             !attendence::whereattendence_date($keys)
                                 ->whereEmp_id($key)
@@ -30,7 +31,7 @@ class CheckController extends Controller
                             $data = new attendence();
                             
                             $data->emp_id = $key;
-                            $emp_req = Employee::whereId($data->emp_id)->first();
+                            $emp_req = User::whereId($data->emp_id)->first();
                             $data->attendence_time = date('H:i:s', strtotime($emp_req->schedules->first()->time_in));
                             $data->attendence_date = $keys;
                             
@@ -48,7 +49,7 @@ class CheckController extends Controller
         if (isset($request->leave)) {
             foreach ($request->leave as $keys => $values) {
                 foreach ($values as $key => $value) {
-                    if ($employee = Employee::whereId(request('emp_id'))->first()) {
+                    if ($employee = User::whereId(request('emp_id'))->first()) {
                         if (
                             !Leave::whereLeave_date($keys)
                                 ->whereEmp_id($key)
@@ -57,7 +58,7 @@ class CheckController extends Controller
                         ) {
                             $data = new Leave();
                             $data->emp_id = $key;
-                            $emp_req = Employee::whereId($data->emp_id)->first();
+                            $emp_req = User::whereId($data->emp_id)->first();
                             $data->leave_time = $emp_req->schedules->first()->time_out;
                             $data->leave_date = $keys;
                             if ($employee->schedules->first()->time_out <= $data->leave_time) {
@@ -78,7 +79,7 @@ class CheckController extends Controller
     {
         
 
-    return view('admin.sheet-report')->with(['employees' => Employee::all()]);
+    return view('admin.employee.sheet-report')->with(['employees' => User::all()]);
     }
 }
 

@@ -59,6 +59,8 @@ Route::post('form/saveemployee',[EmployeeController::class,'saveEmployee']);
 Route::post('form/saveleave',[EmployeeController::class,'saveLeave']);
 Route::get('/delete_emp/{id}',[EmployeeController::class,'deleteEmp']);
 Route::get('/delete_leave/{id}',[EmployeeController::class,'deleteLeave']);
+Route::get('/update_emp/{id}', [EmployeeController::class, 'updateemp'])->name('update_emp');
+Route::put('/update_emp_confirm/{id}', [EmployeeController::class, 'update_emp_confirm'])->name('update_emp_confirm');
 
 
 

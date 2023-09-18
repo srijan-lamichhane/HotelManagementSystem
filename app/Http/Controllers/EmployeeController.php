@@ -10,10 +10,18 @@ use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
-    public function listemployees()
+    public function listemployees(Request $request)
     {
-        $employee = User::all();
-        return view('admin.employee.employeeslist', compact('employee'));
+
+        $search = $request['search'] ?? "";
+        if ($search != "") {
+            //where
+            $employee = User::where('name','LIKE',"%$search%")->orWhere('email','LIKE',"%$search%")->get();
+        } else {
+
+            $employee = User::all();
+        }
+        return view('admin.employee.employeeslist', compact('employee','search'));
     }
 
     public function leave()
@@ -40,6 +48,7 @@ class EmployeeController extends Controller
         $employee->phone = $request->input('phone');
         $employee->address = $request->input('address');
         $employee->join_date = $request->input('join_date');
+        $employee->birth_date = $request->input('birth_date');
         $employee->role = $request->input('role');
         $employee->password = Hash::make($request->input('password'));
         // Handle the file upload and store the 'filename'
@@ -85,5 +94,34 @@ class EmployeeController extends Controller
         $leave = Employee::find($id);
         $leave->delete();
         return redirect()->back()->with('message', 'Data deleted Sucessfully!');
+    }
+
+
+
+    public function updateemp($id)
+    {
+        $employee = User::find($id);
+        return view('admin.employee.editemployee', compact('employee'));
+    }
+
+    public function update_emp_confirm(Request $request, $id)
+    {
+        $employee = User::find($id);
+
+        $employee = new User;
+        $employee->name = $request->input('name');
+        $employee->email = $request->input('email');
+        $employee->phone = $request->input('phone');
+        $employee->address = $request->input('address');
+        $employee->join_date = $request->input('join_date');
+        $employee->birth_date = $request->input('birth_date');
+        $employee->role = $request->input('role');
+        $employee->password = Hash::make($request->input('password'));
+
+        // Save the updated data to the database
+        $employee->save();
+
+        // Redirect to a success page or perform any other desired action
+        return redirect()->to(url('employee/list'))->with('message', 'Data updated successfully!');
     }
 }

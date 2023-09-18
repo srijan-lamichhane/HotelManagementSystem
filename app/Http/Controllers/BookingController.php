@@ -86,6 +86,7 @@ class BookingController extends Controller
         $data->email_id = $request->input('email_id');
         $data->ph_number = $request->input('ph_number');
         $data->message = $request->input('message');
+        // $data->boolean('status')->default(1);
 
         // Save the updated data to the database
         $data->save();

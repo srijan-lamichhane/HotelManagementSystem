@@ -31,40 +31,24 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form>
+
+
+                    <form action="">
                             <div class="row formtype">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Employee ID</label>
-                                        <input type="text" class="form-control" id="usr">
+                                        <input type="search" name="search" placeholder="empname or email" class="form-control" value="{{$search}}">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Employee Name</label>
-                                        <input type="text" class="form-control" id="usr1">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <select class="form-control" id="sel1" name="sellist1">
-                                            <option>Admin</option>
-                                            <option>Manager</option>
-                                            <option>Staff</option>
-                                            <option>Accountant</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label>Search</label>
-                                        <a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a>
-
+                                        <button class="btn btn-success btn-block mt-0 search_button"> Search </button>
                                     </div>
                                 </div>
                             </div>
                         </form>
+
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -79,6 +63,7 @@
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Mobile</th>
+                                                <th>Address</th>
                                                 <th>Join Date</th>
                                                 <th>role</th>
                                                 <th class="text-right">Actions</th>

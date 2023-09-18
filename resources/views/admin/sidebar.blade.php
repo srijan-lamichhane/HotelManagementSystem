@@ -76,10 +76,11 @@
 				<!-- <li> <a href="assets.html"><i class="fas fa-cube"></i> <span>Assests</span></a> </li> -->
 				<!-- <li> <a href="activities.html"><i class="far fa-bell"></i> <span>Activities</span></a> </li> -->
 
-				
 
-				<li> <a href="{{url ('/check')}}"><i class="fas fa-file"></i> <span> Attendence sheet </span></a>
-				</li>
+
+				<li> <a href="{{url ('/check')}}"><i class="fas fa-file"></i> <span> Attendence sheet </span></a></li>
+				<li> <a href="{{url ('/sheet-report')}}"><i class="fas fa-file"></i> <span> Sheet Report </span></a></li>
+				
 
 				<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Billing </span> <span class="menu-arrow"></span></a>
 					<ul class="submenu_class" style="display: none;">
