@@ -19,16 +19,27 @@
 
         <div class="page-wrapper">
             <div class="content container-fluid">
+
                 <div class="page-header">
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="mt-5">
+                                
+                            @if(session()->has('message'))
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                        {{session()->get('message')}}
+                                    </div>
+                                    @endif
+
                                 <h4 class="card-title float-left mt-2">Employee</h4>
                                 <a href="{{url('form/addemployee')}}" class="btn btn-primary float-right veiwbutton">Add Employee</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="row">
                     <div class="col-lg-12">
 
