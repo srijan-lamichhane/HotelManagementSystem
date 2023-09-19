@@ -78,8 +78,8 @@
 
 
 
-				<li> <a href="{{url ('/check')}}"><i class="bi bi-file-earmark-spreadsheet"></i> <span> Attendence sheet </span></a></li>
-				<li> <a href="{{url ('/sheet-report')}}"><i class="fas fa-file"></i> <span> Sheet Report </span></a></li>
+				<li> <a href="{{url ('/check')}}"><i class="fas fa-file-alt"></i> <span> Attendence sheet </span></a></li>
+				<li> <a href="{{url ('/sheet-report')}}"><i class="fas fa-file-excel"></i> <span> Sheet Report </span></a></li>
 				
 
 				<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Billing </span> <span class="menu-arrow"></span></a>
