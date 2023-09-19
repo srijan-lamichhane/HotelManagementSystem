@@ -37,13 +37,9 @@
 
 				<li> <a href="{{url ('/check')}}"><i class="fas fa-file-alt"></i> <span> Attendence sheet </span></a></li>
 				<li> <a href="{{url ('/sheet-report')}}"><i class="fas fa-file-excel"></i> <span> Sheet Report </span></a></li>
-				
 
-				<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Billing </span> <span class="menu-arrow"></span></a>
-					<ul class="submenu_class" style="display: none;">
-						<li><a href="expense-reports.html">Expense Report </a></li>
-						<li><a href="invoice-reports.html">Invoice Report </a></li>
-					</ul>
+
+				<li> <a href="{{url ('/form/billing')}}"><i class="fe fe-table"></i> <span> Billing </span></a>
 				</li>
 
 			</ul>

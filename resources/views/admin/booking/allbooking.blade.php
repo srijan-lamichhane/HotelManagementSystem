@@ -43,7 +43,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                        
+
 
                         <form action="">
                             <div class="row formtype">
@@ -73,8 +73,9 @@
                                     <table class="datatable table table-stripped table table-hover table-center mb-0">
                                         <thead>
                                             <tr>
-                                                <th class="datatable table table-stripped table table-hover table-center mb-0">Booking ID</th>
+                                                <th class="datatable sortable" data-column="id">Booking ID</th>
                                                 <th>Name</th>
+                                                <th>Status</th>
                                                 <th>Room Type</th>
                                                 <th>Room Number</th>
                                                 <th>Date</th>
@@ -84,7 +85,6 @@
                                                 <th>Email ID</th>
                                                 <th>Ph.Number</th>
                                                 <th>Message</th>
-                                                <th>Status</th>
                                                 <th class="text-right">Actions</th>
                                             </tr>
                                         </thead>
@@ -95,6 +95,28 @@
                                                 <td>BKG-{{ sprintf('%03d', $data->id) }}</td>
 
                                                 <td>{{$data->name}}</a> </td>
+
+                                                
+
+                                                <td>
+                                                    <div class="actions">
+                                                        <form action="{{ route('update-status', $data->id) }}" method="post" class="status-form">
+                                                            @csrf
+                                                            <input type="hidden" name="status" value="{{ $data->status ? 0 : 1 }}">
+                                                            <button type="submit" class="btn btn-sm mr-2 @if($data->status) bg-success-light @else bg-danger-light @endif">
+                                                                @if($data->status)
+                                                                <i class="fa fa-check"></i> Active
+                                                                @else
+                                                                <i class="fa fa-times"></i> Inactive
+                                                                @endif
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+
+
+
+
                                                 <td>{{$data->room_type}}</td>
                                                 <td>{{$data->room_number}}</td>
                                                 <td>{{$data->date}}</td>
@@ -103,13 +125,9 @@
                                                 <td>{{$data->departure_date}}</td>
                                                 <td>{{$data->email_id}}</td>
                                                 <td>{{$data->ph_number}}</td>
-                                                <!-- <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2652494b4b5f44435448474a66435e474b564a430845494b">[email&#160;protected]</a></td> -->
                                                 <td>{{$data->message}}</td>
-                                                <td>
-                                                    <div class="actions">
-                                                        <a href="#" class="btn btn-sm bg-success-light mr-2 activeButton">Active</a>
-                                                    </div>
-                                                </td>
+
+
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_record',$data->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$data->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
@@ -126,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="delete_asset" class="modal fade delete-modal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -139,7 +157,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     @include('admin.script')
@@ -153,13 +171,16 @@
                 var isActive = $button.hasClass("active");
 
                 if (isActive) {
-                    $button.removeClass("active btn-danger").addClass("bg-success-light").text("Active");
+                    $button.removeClass("active btn-danger").addClass("bg-success-light");
+                    $button.html('<i class="fa fa-check"></i> Active');
                 } else {
-                    $button.addClass("active btn-danger").removeClass("bg-success-light").text("Inactive");
+                    $button.addClass("active btn-danger").removeClass("bg-success-light");
+                    $button.html('<i class="fa fa-times"></i> Inactive');
                 }
             });
         });
     </script>
+
 
 
 </body>

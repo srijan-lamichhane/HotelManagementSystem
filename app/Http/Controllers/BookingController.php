@@ -94,4 +94,17 @@ class BookingController extends Controller
         // Redirect to a success page or perform any other desired action
         return redirect()->to(url('form/allbooking'))->with('message', 'Data updated successfully!');
     }
+
+
+
+    public function updateStatus(Request $request, $id)
+{
+    $booking = Booking::findOrFail($id);
+    $booking->status = $request->status;
+    $booking->save();
+
+    return redirect()->back()->with('message', 'Status updated successfully');
+}
+
+
 }

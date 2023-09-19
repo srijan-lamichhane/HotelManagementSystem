@@ -42,6 +42,11 @@ Route::get('/delete_record/{id}',[BookingController::class,'deleterecord']);
 Route::get('/update_record/{id}', [BookingController::class, 'updaterecord'])->name('update_record');
 Route::put('/update_data_confirm/{id}', [BookingController::class, 'update_data_confirm'])->name('update_data_confirm');
 
+Route::post('/update-status/{id}', [BookingController::class, 'updateStatus'])->name('update-status');
+
+
+
+
 Route::get('form/customers',[BookingController::class,'customers']);
 
 Route::get('/all_rooms',[RoomController::class,'allrooms']);
@@ -71,4 +76,7 @@ Route::get('/check',[CheckController::class,'index']);
 Route::get('/sheet-report',[CheckController::class,'sheetReport']);
 Route::post('/check_store',[CheckController::class,'CheckStore']);
 
+
+Route::get('form/billing',[BillingController::class,'billing']);
+Route::post('/savebill',[BillingController::class,'savebill']);
 

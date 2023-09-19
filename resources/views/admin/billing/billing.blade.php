@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     @include('admin.css')
 
+    <link rel="icon" type="image/png" sizes="32*32" href="images\billing.png">
+    <link rel="stylesheet" type="text/css" href="billing.css">
+    <script type="text/javascript" src="timer.js">
+    </script>
+    <script type="text/javascript" src="calculate.js">
+    </script>
+    <script src="jquery-3.3.1.js">
+    </script>
+    <style type="text/css">
+        #home {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-left: 20px;
+            margin-top: 20px;
+
+        }
+
+        #homeimg {
+            height: 80px;
+            width: 80px;
+            float: left;
+            position: fixed;
+            z-index: 1;
+
+
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="main-wrapper">
         @include('admin.header')
 
@@ -15,8 +42,6 @@
 
 
         <div class="page-wrapper">
-
-
 
             <div class="content container-fluid">
 
@@ -31,34 +56,38 @@
                                         {{session()->get('message')}}
                                     </div>
                                     @endif
+
                                 </div>
-                                <h4 class="card-title float-left mt-2">Add Booking</h4>
-                                
                             </div>
                         </div>
-                    </div>
-                </div>
 
 
 
 
-                <form action="{{url ('form/billing')}}"method="post">
-                    @csrf
-                    <div class="row">
-                        <div class="col-lg-12">
-
-                            <div class="row formtype">
-
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" required id="sel1" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Room Type</label>
-                                        <select class="form-control" required id="sel2" name="room_type">
+                        <form action="{{url ('/savebill')}}" method="post">
+                            @csrf
+                            <legend style="font-family: monospace;">
+                                BILLING
+                            </legend>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>BILLING NO:</label>
+                                    </td>
+                                    <td><input type="text" name="billing_no" width="30" maxlength="25" id="t2" onfocus="f2()" onblur="f0()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>NAME:</label></td>
+                                    <td><input type="text" name="name" placeholder="NAME" width="30" maxlength="25" id="t1" onfocus="f1()" onblur="f0()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>ROOM TYPE:</label>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" required id="sel2" name="room_type" width="30" maxlength="25" id="t2" onfocus="f2()" onblur="f0()">
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Double</option>
@@ -67,96 +96,108 @@
                                             <option>double-AC</option>
                                             <option>triple-AC</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Room number</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>ROOM NUMBER:</label></td>
+                                    <td>
                                         <input type="number" class="form-control" required id="sel1" name="room_number">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>billing Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker" required name="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Time</label>
-                                        <div class="time-icon">
-                                            <input type="text" class="form-control datetimepicker3" required id="datetimepicker3" name="time">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label> Arrival Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control  datetimepicker" required name="arrival_date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>Departure Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control  datetimepicker" required name="departure_date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>room/per day</label>
-                                        <input type="text" class="form-control" required id="price" name="price">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>no of stay days</label>
-                                        <input type="text" class="form-control" required id="days" name="days">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>TOTAL</label>
-                                        <input type="text" class="form-control" required id="total" name="total">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>transaction type</label>
-                                        <select class="form-control" required id="sel2" name="room_type">
-                                            <option>cash</option>
-                                            <option>cheque</option>
-                                            <option>online</option>
-                                           
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label>cheque/transaction no</label>
-                                        <input type="text" class="form-control" required id="cheque/transaction no" name="cheque/transaction no">
-                                    </div>
-                                </div>
-                            </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label> BILLING DATE:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control  datetimepicker" required name="billing_date">
+                                <tr>
+                                    <td>
+                                        <label>TIME:</label>
+                                    </td>
+                                    <td>
 
-                        </div>
+                                        <input type="text" class="form-control datetimepicker3" required id="datetimepicker3" name="time">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>CHECK IN DATA:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control  datetimepicker" required name="arrival_date">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>CHECK OUT DATE:</label>
+                                    <td>
+                                        <input type="text" class="form-control  datetimepicker" required name="departure_date">
+                                    </td>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label>PRICE OF ROOM:</label>
+                                    </td>
+                                    <td><input type="text" name="price"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>NO OF STAY DAYS:</label>
+                                    </td>
+                                    <td><input type="text" name="no_of_days_stay"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>AMOUNT TO BE PAID(IN Rs.):</label>
+                                    </td>
+                                    <td><input type="text" name="total"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>PAYMENT METHOD</label>
+                                    </td>
+                                    <td>
+                                        <select class="form-control" required id="sel2" name="transaction_type">
+                                            <option>cheque</option>
+                                            <option>cash</option>
+                                            <option>online transaction</option>
+
+                                        </select>
+                                    </td>
+                                </tr><br>
+                                <tr>
+                                    <td>
+                                        <label>CHEQUE/TRANSACTION NO:</label>
+                                    </td>
+                                    <td><input type="text" name="transaction_no">
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                            <button type="submit" class="btn btn-primary buttonedit1" name="submit" value="record bill">record bill</button>
+                        </form>
+
+
                     </div>
-                    <button type="submit" class="btn btn-primary buttonedit1" name="submit" value="save bill">save bill</button>
-                </form>
+                </div>
             </div>
         </div>
-
-
     </div>
 
 
-    @include('admin.script')
 
+    @include('admin.script')
 </body>
 
 </html>

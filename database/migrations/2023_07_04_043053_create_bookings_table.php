@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('email_id')->nullable();
             $table->string('ph_number')->nullable();
             $table->string('message')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

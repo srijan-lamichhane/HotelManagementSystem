@@ -18,7 +18,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="mt-5">
-                                <h4 class="card-title float-left mt-2">ADD-ROOMS</h4>
+                                <h4 class="card-title float-left mt-2">ADD ROOMS</h4>
                               
                             </div>
                         </div>
@@ -47,7 +47,7 @@
 
                     <div class="form-group">
                         <label for="floor">Floor</label>
-                        <input type="text" name="floor" id="floor" class="form-control" required style="max-width: 300px;">
+                        <input type="number" name="floor" id="floor" class="form-control" required style="max-width: 300px;">
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
