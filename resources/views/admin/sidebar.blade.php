@@ -39,7 +39,7 @@
 				<li> <a href="{{url ('/sheet-report')}}"><i class="fas fa-file-excel"></i> <span> Sheet Report </span></a></li>
 
 
-				<li> <a href="{{url ('/form/billing')}}"><i class="fe fe-table"></i> <span> Billing </span></a>
+				<li> <a href="{{url ('/billing')}}"><i class="fe fe-table"></i> <span> Billing </span></a>
 				</li>
 
 			</ul>

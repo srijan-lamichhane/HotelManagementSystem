@@ -64,7 +64,7 @@
 
 
 
-                        <form action="{{url ('/savebill')}}" method="post">
+                        <form action="{{url ('/savebill')}}" method="POST">
                             @csrf
                             <legend style="font-family: monospace;">
                                 BILLING

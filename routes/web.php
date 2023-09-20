@@ -8,6 +8,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CalanderController;
 use App\Http\Controllers\CheckController;
+use App\Http\Controllers\BillingController;
 use Illuminate\Support\Facades\App;
 
 Route::get('/',[HomeController::class,'index']);
@@ -77,6 +78,6 @@ Route::get('/sheet-report',[CheckController::class,'sheetReport']);
 Route::post('/check_store',[CheckController::class,'CheckStore']);
 
 
-Route::get('form/billing',[BillingController::class,'billing']);
+Route::get('/billing',[BillingController::class,'billing']);
 Route::post('/savebill',[BillingController::class,'savebill']);
 
