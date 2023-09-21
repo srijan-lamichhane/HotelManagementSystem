@@ -36,7 +36,7 @@ class RoomController extends Controller
         $addrooms->save();
 
         // Redirect to a success page or perform any other desired action
-        return redirect('/add_rooms');
+        return redirect()->to(url('/all_rooms'))->with('message', 'New Room Added Sucessfully!');
     }
 
     public function deleterecord1($id)
@@ -46,5 +46,17 @@ class RoomController extends Controller
         return redirect()->back()->with('message', 'Data deleted Sucessfully!');
     }
 
+
+
+
+
+    public function updateRoomStatus(Request $request, $id)
+    {
+        $addrooms = addrooms::findOrFail($id);
+        $addrooms->status = $request->status;
+        $addrooms->save();
+    
+        return redirect()->back()->with('message', 'Status updated successfully');
+    }
     
 }

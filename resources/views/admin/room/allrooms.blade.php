@@ -18,6 +18,14 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="mt-5">
+
+                                @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                    {{session()->get('message')}}
+                                </div>
+                                @endif
+
                                 <h4 class="card-title float-left mt-2">ROOMS</h4>
                                 <a href="{{url('form/allrooms')}}" class="btn btn-primary float-right veiwbutton ">Add Rooms</a>
                             </div>
@@ -49,12 +57,27 @@
                                                 <td>{{$addroom->room_type}}</a> </td>
                                                 <td>{{$addroom->floor}}</td>
                                                 <td>{{$addroom->price}}</td>
-                                                
+
+
+
                                                 <td>
                                                     <div class="actions">
-                                                        <a href="#" class="btn btn-sm jbg-success-light mr-2 activeButton">Available</a>
+                                                        <form action="{{ route('update-roomstatus', $addroom->id) }}" method="post" class="status-form">
+                                                            @csrf
+                                                            <input type="hidden" name="status" value="{{ $addroom->status ? 0 : 1 }}">
+                                                            <button type="submit" class="btn btn-sm mr-2 @if($addroom->status) bg-success-light @else bg-danger-light @endif">
+                                                                @if($addroom->status)
+                                                                <i class="fa fa-check"></i> Active
+                                                                @else
+                                                                <i class="fa fa-times"></i> Inactive
+                                                                @endif
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </td>
+
+
+
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
                                                         <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('/editrooms')}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$addroom->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
@@ -62,7 +85,7 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                     
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -97,9 +120,11 @@
                 var isActive = $button.hasClass("active");
 
                 if (isActive) {
-                    $button.removeClass("active btn-danger").addClass("bg-success-light").text("Active");
+                    $button.removeClass("active btn-danger").addClass("bg-success-light");
+                    $button.html('<i class="fa fa-check"></i> Active');
                 } else {
-                    $button.addClass("active btn-danger").removeClass("bg-success-light").text("Inactive");
+                    $button.addClass("active btn-danger").removeClass("bg-success-light");
+                    $button.html('<i class="fa fa-times"></i> Inactive');
                 }
             });
         });

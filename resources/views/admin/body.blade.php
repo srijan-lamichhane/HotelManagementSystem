@@ -33,7 +33,7 @@
 						<div class="card-body">
 							<div class="dash-widget-header">
 								<div>
-									<h3 class="card_widget_header">180</h3>
+									<h3 class="card_widget_header">{{ sprintf('%03d', $lastRoomId) }}</h3>
 									<h6 class="text-muted">Available Rooms</h6>
 								</div>
 								<div class="ml-auto mt-md-3 mt-lg-0"> <span class="opacity-7 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#009688" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
@@ -49,8 +49,8 @@
 						<div class="card-body">
 							<div class="dash-widget-header">
 								<div>
-									<h3 class="card_widget_header">1538</h3>
-									<h6 class="text-muted">Enquiry</h6>
+									<h3 class="card_widget_header">{{ sprintf('%02d', $lastEmpId) }}</h3>
+									<h6 class="text-muted">Total Employees</h6>
 								</div>
 								<div class="ml-auto mt-md-3 mt-lg-0"> <span class="opacity-7 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#009688" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-plus">
 											<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">

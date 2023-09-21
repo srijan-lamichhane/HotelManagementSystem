@@ -33,7 +33,7 @@
                                     @endif
                                 </div>
                                 <h4 class="card-title float-left mt-2">Add Booking</h4>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -60,13 +60,11 @@
                                     <div class="form-group">
                                         <label>Room Type</label>
                                         <select class="form-control" required id="sel2" name="room_type">
-                                            <option>Select</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>Quad</option>
-                                            <option>King</option>
-                                            <option>Suite</option>
-                                            <option>Villa</option>
+                                            <option>Normal Room</option>
+                                            <option>Video Room</option>
+                                            <option>DOubledBed Room</option>
+                                            <option>Special Room</option>
+                                            <option>AC Room</option>
                                         </select>
                                     </div>
                                 </div>
@@ -120,7 +118,7 @@
                                         <input type="text" class="form-control" required id="usr1" name="ph_number">
                                     </div>
                                 </div>
-                     
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Message</label>
