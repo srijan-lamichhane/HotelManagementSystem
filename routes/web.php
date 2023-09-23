@@ -85,4 +85,8 @@ Route::post('/check_store',[CheckController::class,'CheckStore']);
 
 Route::get('/billing',[BillingController::class,'billing']);
 Route::post('/savebill',[BillingController::class,'savebill']);
+Route::get('/billing_report',[BillingController::class,'billing_report']);
+Route::get('/delete_billrecord/{id}',[BillingController::class,'deletebillrecord']);
+Route::get('/update_billrecord/{id}', [BillingController::class, 'updatebillrecord'])->name('update_billrecord');
+Route::put('/update_billdata_confirm/{id}', [BillingController::class, 'update_billdata_confirm'])->name('update_billdata_confirm');
 

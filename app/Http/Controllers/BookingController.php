@@ -58,6 +58,7 @@ class BookingController extends Controller
         // Redirect to a success page or perform any other desired action
         return redirect()->to(url('form/allbooking'))->with('message', 'New booking Added Sucessfully!');
     }
+    
 
     public function deleterecord($id)
     {

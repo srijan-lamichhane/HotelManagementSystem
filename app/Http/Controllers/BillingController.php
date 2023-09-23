@@ -9,6 +9,16 @@ use Carbon\Carbon;
 
 class BillingController extends Controller
 {
+
+
+    public function billing_report(){
+
+        $data = billing::all();
+        return view("admin.billing.billreport",compact('data'));
+    }
+
+
+
     public function billing()
     {
 
@@ -59,6 +69,46 @@ class BillingController extends Controller
 
         // Save the data to the database
         $data->save();
-        return redirect()->to(url('/billing'))->with('message', 'bill recorded sucessfully!');
+        return redirect()->to(url('/billing_report'))->with('message', 'bill recorded sucessfully!');
     }
+
+
+    public function deletebillrecord($id)
+    {
+        $data = billing::find($id);
+        $data->delete();
+        return redirect()->to(url('/billing_report'))->with('message', 'Data deleted successfully!')->with('alert-class', 'alert-delete');
+
+    }
+
+    public function updatebillrecord($id)
+    {
+        $data = billing::find($id);
+        return view('admin.billing.billing', compact('data'));
+    }
+
+    public function update_billdata_confirm(Request $request, $id)
+    {
+        $data = billing::find($id);
+        
+        $data->name = $request->input('name');
+        $data->room_type = $request->input('room_type');
+        $data->room_number = $request->input('room_number');
+        $data->billing_date = $request->input('billing_date');
+        $data->billing_time = Carbon::parse($request->input('billing_time'))->format('H:i:s');
+        $data->no_of_days_stay = $request->input('no_of_days_stay');
+        $data->price = $request->input('price');
+        $data->total = $request->input('no_of_days_stay') * $request->input('price');
+        $data->transaction_type = $request->input('transaction_type');
+
+        // Save the updated data to the database
+        $data->save();
+
+        // Redirect to a success page or perform any other desired action
+        return redirect()->to(url('/billing_report'))->with('message', 'Data updated successfully!');
+    }
+
+    
+
+    
 }
