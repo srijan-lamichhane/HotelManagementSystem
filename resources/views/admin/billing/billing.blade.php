@@ -3,47 +3,18 @@
 
 <head>
     @include('admin.css')
-
     <link rel="icon" type="image/png" sizes="32*32" href="images\billing.png">
     <link rel="stylesheet" type="text/css" href="billing.css">
-    <script type="text/javascript" src="timer.js">
-    </script>
-    <script type="text/javascript" src="calculate.js">
-    </script>
-    <script src="jquery-3.3.1.js">
-    </script>
-    <style type="text/css">
-        #home {
-            position: fixed;
-            top: 0;
-            left: 0;
-            margin-left: 20px;
-            margin-top: 20px;
-
-        }
-
-        #homeimg {
-            height: 80px;
-            width: 80px;
-            float: left;
-            position: fixed;
-            z-index: 1;
-
-
-        }
-    </style>
 </head>
 
 <body>
     <div class="main-wrapper">
         @include('admin.header')
-
         @include('admin.sidebar')
 
-
         <div class="page-wrapper">
-
             <div class="content container-fluid">
+
 
                 <div class="page-header">
                     <div id="popup-container">
@@ -56,148 +27,129 @@
                                         {{session()->get('message')}}
                                     </div>
                                     @endif
-
                                 </div>
+                                <h4 class="card-title float-left mt-2">Billing</h4>
                             </div>
                         </div>
-
-
-
-
-                        <form action="{{url ('/savebill')}}" method="POST">
-                            @csrf
-                            <legend style="font-family: monospace;">
-                                BILLING
-                            </legend>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <label>BILLING NO:</label>
-                                    </td>
-                                    <td><input type="text" name="billing_no" width="30" maxlength="25" id="t2" onfocus="f2()" onblur="f0()">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label>NAME:</label></td>
-                                    <td><input type="text" name="name" placeholder="NAME" width="30" maxlength="25" id="t1" onfocus="f1()" onblur="f0()">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>ROOM TYPE:</label>
-                                    </td>
-                                    <td>
-                                        <select class="form-control" required id="sel2" name="room_type" width="30" maxlength="25" id="t2" onfocus="f2()" onblur="f0()">
-                                            <option>Select</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>triple</option>
-                                            <option>single-AC</option>
-                                            <option>double-AC</option>
-                                            <option>triple-AC</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><label>ROOM NUMBER:</label></td>
-                                    <td>
-                                        <input type="number" class="form-control" required id="sel1" name="room_number">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label> BILLING DATE:</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control  datetimepicker" required name="billing_date">
-                                <tr>
-                                    <td>
-                                        <label>TIME:</label>
-                                    </td>
-                                    <td>
-
-                                        <input type="text" class="form-control datetimepicker3" required id="datetimepicker3" name="time">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>CHECK IN DATA:</label>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control  datetimepicker" required name="arrival_date">
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>CHECK OUT DATE:</label>
-                                    <td>
-                                        <input type="text" class="form-control  datetimepicker" required name="departure_date">
-                                    </td>
-
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <label>PRICE OF ROOM:</label>
-                                    </td>
-                                    <td><input type="text" name="price"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>NO OF STAY DAYS:</label>
-                                    </td>
-                                    <td><input type="text" name="no_of_days_stay"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>AMOUNT TO BE PAID(IN Rs.):</label>
-                                    </td>
-                                    <td><input type="text" name="total"></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>PAYMENT METHOD</label>
-                                    </td>
-                                    <td>
-                                        <select class="form-control" required id="sel2" name="transaction_type">
-                                            <option>cheque</option>
-                                            <option>cash</option>
-                                            <option>online transaction</option>
-
-                                        </select>
-                                    </td>
-                                </tr><br>
-                                <tr>
-                                    <td>
-                                        <label>CHEQUE/TRANSACTION NO:</label>
-                                    </td>
-                                    <td><input type="text" name="transaction_no">
-                                    </td>
-                                </tr>
-
-                            </table>
-
-                            <button type="submit" class="btn btn-primary buttonedit1" name="submit" value="record bill">record bill</button>
-                        </form>
-
-
                     </div>
                 </div>
+
+
+
+                <form action="{{url ('/savebill')}}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Name:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" required name="name" value="{{ $latestBooking->name }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Room Type:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" required name="room_type" value="{{ $latestBooking->room_type }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Room Number:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" required name="room_number" value="{{ $latestBooking->room_number }}">
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Billing Date:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control datetimepicker" required name="billing_date">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Time:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control datetimepicker3" required id="datetimepicker3" name="billing_time">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No. of Stay Days:</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" required id="no_of_days_stay" name="no_of_days_stay" value="{{ isset($stayDays) ? $stayDays : '' }}">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Price of Room:</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" required id="price" name="price">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Amount to be paid (in Rs):</label>
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" required id="total" name="total" readonly>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Payment Method: </label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" required name="transaction_type">
+                                        <option>cheque</option>
+                                        <option>cash</option>
+                                        <option>online transaction</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <button type="submit" class="btn btn-primary buttonedit1" name="submit" value="record bill">Record Bill</button>
+                </form>
+
+
             </div>
         </div>
     </div>
-
-
-
     @include('admin.script')
+
+    <script>
+        $(document).ready(function() {
+            $('#no_of_days_stay, #price').on('input', function() {
+                calculateTotal();
+            });
+
+            function calculateTotal() {
+                // Get the values of no_of_days_stay and price
+                var no_of_days_stay = $('#no_of_days_stay').val();
+                var price = $('#price').val();
+
+                // Check if both values are present and numeric
+                if (!isNaN(no_of_days_stay) && !isNaN(price)) {
+                    var total = parseFloat(no_of_days_stay) * parseFloat(price);
+                    $('#total').val(total.toFixed(2)); // Set the total with 2 decimal places
+                } else {
+                    $('#total').val(''); // Clear the total if input is invalid
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

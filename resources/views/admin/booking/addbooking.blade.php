@@ -63,7 +63,7 @@
                                             <option>Normal Room</option>
                                             <option>Video Room</option>
                                             <option>DOubledBed Room</option>
-                                            <option>Special Room</option>
+                                            <option>TripleBed Room</option>
                                             <option>AC Room</option>
                                         </select>
                                     </div>
