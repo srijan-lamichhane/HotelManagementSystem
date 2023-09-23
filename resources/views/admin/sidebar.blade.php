@@ -25,9 +25,6 @@
 					<ul class="submenu_class" style="display: none;">
 						<li><a href="{{url ('employee/list')}}">Employees List </a></li>
 						<li><a href="{{url ('form/addemployee')}}">Add Employee </a></li>
-						<li><a href="{{url ('employee/leave')}}">Leaves </a></li>
-						<li><a href="{{url ('form/addleave')}}">AddLeave</a></li>
-
 					</ul>
 				</li>
 

@@ -26,14 +26,24 @@
                     <div id="popup-container">
                         <div class="row align-items-center">
                             <div class="col">
-                                <div class="mt-5">
+
+
+                            <div class="mt-5">
                                     @if(session()->has('message'))
-                                    <div class="alert alert-success">
+                                    @php
+                                    $alertClass = session('alert-class', 'alert-success'); // Default to green
+                                    if ($alertClass === 'alert-delete') {
+                                    $alertClass = 'alert-danger'; // Change to red for delete messages
+                                    }
+                                    @endphp
+                                    <div class="alert {{ $alertClass }}">
                                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                        {{session()->get('message')}}
+                                        {{ session()->get('message') }}
                                     </div>
                                     @endif
                                 </div>
+
+                                
                                 <h4 class="card-title float-left mt-2">Appointments</h4>
                                 <a href="{{url('form/addbooking')}}" class="btn btn-primary float-right veiwbutton ">Add Booking</a>
                             </div>

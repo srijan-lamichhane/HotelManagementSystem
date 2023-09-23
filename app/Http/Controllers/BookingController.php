@@ -64,7 +64,7 @@ class BookingController extends Controller
     {
         $data = Booking::find($id);
         $data->delete();
-        return redirect()->back()->with('message', 'Data deleted Sucessfully!');
+        return redirect()->back()->with('message', 'Data deleted Sucessfully!')->with('alert-class', 'alert-delete');
     }
     public function updaterecord($id)
     {
