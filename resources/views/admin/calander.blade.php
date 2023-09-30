@@ -19,16 +19,28 @@
 
 		<div class="page-wrapper">
 			<div class="content container-fluid">
+
+
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
 							<div class="mt-5">
+
+								@if(session()->has('message'))
+								<div class="alert alert-success">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+									{{session()->get('message')}}
+								</div>
+								@endif
+
 								<h4 class="card-title float-left mt-2">Calendar</h4>
 								<button type="button" class="btn btn-primary float-right veiwbutton" data-toggle="modal" data-target="#add_event1">Add Event</button>
 							</div>
 						</div>
 					</div>
 				</div>
+
+
 				<div class="col-lg-12 col-md-8">
 					<div class="card">
 						<div class="card-body">
@@ -37,6 +49,8 @@
 					</div>
 				</div>
 			</div>
+
+
 			<div id="add_event1" class="modal fade" role="dialog">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
@@ -45,15 +59,16 @@
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
 						</div>
 						<div class="modal-body">
-							<form>
+							<form action="{{ url('/add-event') }}" method="POST">
+								@csrf
 								<div class="form-group">
 									<label>Event Name <span class="text-danger">*</span></label>
-									<input class="form-control" type="text">
+									<input class="form-control" type="text" id="eventNameInput" name="event_name">
 								</div>
 								<div class="form-group">
 									<label>Event Date <span class="text-danger">*</span></label>
 									<div class="cal-icon">
-										<input class="form-control datetimepicker" type="text">
+										<input class="form-control datetimepicker" type="text" id="eventDateInput" name="event_date">
 									</div>
 								</div>
 								<div class="submit-section">
@@ -65,33 +80,38 @@
 				</div>
 			</div>
 
-    <!-- Add Event Modal -->
-    <div class="modal fade none-border" id="addEventModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Event</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label>Event Name</label>
-                            <input class="form-control" type="text" id="eventNameInput">
-                        </div>
-                        <div class="form-group">
-                            <label>Event Date</label>
-                            <input class="form-control" type="text" id="eventDateInput" readonly>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-success save-event submit-btn" id="saveEventBtn">Create event</button>
-                    <button type="button" class="btn btn-danger delete-event submit-btn" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+			<!-- Add Event Modal -->
+			<div class="modal fade none-border" id="addEventModal">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Add Event</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+
+
+							<form action="{{ url('/add-event') }}" method="POST">
+								@csrf
+								<div class="form-group">
+									<label>Event Name</label>
+									<input class="form-control" type="text" id="eventNameInput">
+								</div>
+								<div class="form-group">
+									<label>Event Date</label>
+									<input class="form-control" type="text" id="eventDateInput">
+								</div>
+							</form>
+
+
+						</div>
+						<div class="modal-footer justify-content-center">
+							<button type="button" class="btn btn-success save-event submit-btn" id="saveEventBtn">Create event</button>
+							<button type="button" class="btn btn-danger delete-event submit-btn" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
 			<div class="modal fade" id="add_new_event">
@@ -102,6 +122,7 @@
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						</div>
 						<div class="modal-body">
+
 							<form>
 								<div class="form-group">
 									<label>Category Name</label>
@@ -122,6 +143,7 @@
 									<button type="button" class="btn btn-primary save-category submit-btn" data-dismiss="modal">Save</button>
 								</div>
 							</form>
+
 						</div>
 					</div>
 				</div>
@@ -136,21 +158,26 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form>
+
+
+						<form action="{{ url('/add-event') }}" method="POST">
+							@csrf
 							<div class="form-group">
 								<label>Event Name <span class="text-danger">*</span></label>
-								<input class="form-control" type="text">
+								<input class="form-control" type="text" id="eventNameInput">
 							</div>
 							<div class="form-group">
 								<label>Event Date <span class="text-danger">*</span></label>
 								<div class="cal-icon">
-									<input class="form-control datetimepicker" type="text">
+									<input class="form-control datetimepicker" type="text" id="eventDateInput">
 								</div>
 							</div>
 							<div class="m-t-20 text-center">
 								<button class="btn btn-primary submit-btn">Create Event</button>
 							</div>
 						</form>
+
+
 					</div>
 				</div>
 			</div>
@@ -160,47 +187,60 @@
 
 
 	@include('admin.script')
+
 	<script>
-		
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendar');
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				plugins: ['dayGrid', 'timeGrid', 'list', 'interaction'],
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+				},
+				defaultDate: Date.now(),
+				navLinks: true,
+				editable: true,	
+				eventLimit: true,
+				events: [],
+				dateClick: function(info) {
+					// 'info' contains information about the clicked date
+					var clickedDate = info.dateStr;
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                // Your FullCalendar configuration options go here
-                // ...
+					// Set the clicked date in the modal
+					document.getElementById('eventDateInput').value = clickedDate;
 
-                // Add a dateClick callback to handle click events on calendar dates
-                dateClick: function(info) {
-                    // 'info' contains information about the clicked date
-                    var clickedDate = info.dateStr;
+					// Show the 'Add Event' modal
+					$('#addEventModal').modal('show');
+				}
+			});
 
-                    // Set the clicked date in the modal
-                    document.getElementById('eventDateInput').value = clickedDate;
+			calendar.render();
 
-                    // Show the 'Add Event' modal
-                    $('#addEventModal').modal('show');
-                }
-            });
+			// Handle the "Create event" button click in the modal
+			document.getElementById('saveEventBtn').addEventListener('click', function() {
+				var eventName = document.getElementById('eventNameInput').value;
+				var eventDate = document.getElementById('eventDateInput').value;
 
-            calendar.render();
+				// Add your logic to create the event with 'eventName' and 'eventDate'
+				// You can use FullCalendar's API to add events
+				calendar.addEvent({
+					title: eventName,
+					start: eventDate,
+					allDay: true // All events are set as all-day in this example
+				});
 
-            // Handle the "Create event" button click in the modal
-            document.getElementById('saveEventBtn').addEventListener('click', function() {
-                var eventName = document.getElementById('eventNameInput').value;
-                var eventDate = document.getElementById('eventDateInput').value;
+				// Log the events array
+				console.log(calendar.getEvents());
 
-                // Add your logic to create the event with 'eventName' and 'eventDate'
-                // You can use FullCalendar's API to add events
-                // For example, calendar.addEvent({ title: eventName, start: eventDate });
-
-                // Close the modal
-                $('#addEventModal').modal('hide');
-            });
-        });
-
+				// Close the modal
+				$('#addEventModal').modal('hide');
+			});
+		});
 	</script>
-	
+
+
 </body>
 
 </html>

@@ -25,13 +25,14 @@ class HomeController extends Controller
             // Assign the ID to $lastRoomId
             $lastRoomId = $lastRoom ? $lastRoom->id : null;
 
+            $data = Booking::all();
 
             
             $lastEmp = User::latest()->first();
           
             $lastEmpId = $lastEmp ? $lastEmp->id : null;
             
-            return view('admin.home', compact('lastBookingId', 'lastRoomId', 'lastEmpId'));
+            return view('admin.home', compact('lastBookingId', 'lastRoomId', 'lastEmpId', 'data'));
 
         } else {
             return view('employee.home');

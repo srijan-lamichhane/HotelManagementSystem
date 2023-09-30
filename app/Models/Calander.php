@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Calander extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['event_name'];
 }

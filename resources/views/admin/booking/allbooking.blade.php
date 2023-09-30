@@ -28,7 +28,7 @@
                             <div class="col">
 
 
-                            <div class="mt-5">
+                                <div class="mt-5">
                                     @if(session()->has('message'))
                                     @php
                                     $alertClass = session('alert-class', 'alert-success'); // Default to green
@@ -43,7 +43,7 @@
                                     @endif
                                 </div>
 
-                                
+
                                 <h4 class="card-title float-left mt-2">Appointments</h4>
                                 <a href="{{url('form/addbooking')}}" class="btn btn-primary float-right veiwbutton ">Add Booking</a>
                             </div>
@@ -106,7 +106,7 @@
 
                                                 <td>{{$data->name}}</a> </td>
 
-                                                
+
 
                                                 <td>
                                                     <div class="actions">
@@ -140,7 +140,9 @@
 
                                                 <td class="text-right">
                                                     <div class="dropdown dropdown-action"> <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v ellipse_color"></i></a>
-                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_record',$data->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> <a class="dropdown-item" href="{{url('delete_record',$data->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> </div>
+                                                        <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item" href="{{url ('update_record',$data->id)}}"><i class="fas fa-pencil-alt m-r-5"></i> Edit</a> 
+                                                        <a class="dropdown-item" href="{{url('delete_record',$data->id)}}" data-toggle="modal" data-target="#delete_asset"><i class="fas fa-trash-alt m-r-5"></i> Delete</a> 
+                                                    </div>
                                                     </div>
                                                 </td>
                                             </tr>

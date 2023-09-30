@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('calanders', function (Blueprint $table) {
             $table->id();
+            $table->string('event_name');
+            $table->dateTime('event_date');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

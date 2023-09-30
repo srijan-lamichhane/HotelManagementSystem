@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->Increments('id')->from(001)->unsigned();
+            $table->bigIncrements('id')->unsigned();
             $table->string('name')->nullable();
             $table->string('room_type')->nullable();
             $table->string('room_number')->nullable();
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('ph_number')->nullable();
             $table->string('message')->nullable();
             $table->boolean('status')->default(0);
+
             $table->timestamps();
         });
     }
