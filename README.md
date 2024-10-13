@@ -40,7 +40,7 @@ Contributions are welcome! Feel free to fork the repository and submit pull requ
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/srijan-lamichhane/HotelManagementSystem.git
    cd HotelManagementSystem
    ```
 
